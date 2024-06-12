@@ -1,0 +1,77 @@
+# [spotify]
+# command=~/computer/i3blocks-scripts/spotify.py
+# color=#b8bb26
+# interval=5
+
+[ncspot]
+command=~/computer/i3blocks-scripts/ncspot
+interval=2
+signal=10
+
+# [key_layout]
+# command=~/computer/i3blocks-scripts/key_layout
+# interval=once
+# signal=1
+
+[key_layout_sway]
+command=~/computer/i3blocks-scripts/key_layout_sway
+interval=once
+signal=1
+
+[volume]
+command=~/computer/i3blocks-scripts/volume
+interval=once
+signal=3
+
+[brightness]
+command=~/computer/i3blocks-scripts/brightness
+markup=pango
+interval=once
+signal=2
+
+[wifi]
+command=~/computer/i3blocks-scripts/wifi
+INTERFACE=wlp0s20f3
+interval=5
+
+# [ssid]
+# command=~/computer/i3blocks-scripts/ssid
+# INTERFACE=wlp0s20f3
+# interval=60
+
+# [wifi-strength]
+# command=~/computer/i3blocks-scripts/wifi-strength
+# interval=5
+# INTERFACE=wlp0s20f3
+
+[load]
+command=~/computer/i3blocks-scripts/load
+interval=10
+signal=10
+
+[cpu_temp]
+command=~/computer/i3blocks-scripts/cpu_temp
+markup=pango
+interval=10
+signal=10
+
+[memory]
+command=~/computer/i3blocks-scripts/memory
+interval=5
+signal=10
+
+[disk]
+command=~/computer/i3blocks-scripts/disk
+interval=60
+signal=10
+
+[battery]
+command=~/computer/i3blocks-scripts/battery2
+markup=pango
+interval=10
+signal=10
+
+[datetime]
+command=date +"󰥔  %R %a %Y-%m-%d"
+interval=5
+signal=10
