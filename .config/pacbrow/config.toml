@@ -1,0 +1,13 @@
+# This configuration file has been automatically generated using the default settings.
+# You are free to modify this as much as you like.
+# Any invalid or missing options will revert to their default values.
+[colours]
+normal = "blue"
+info = "green"
+search = "cyan"
+command = "yellow"
+text = "white"
+
+[operation]
+starting_mode = "search"
+allow_colon_in_search = false
