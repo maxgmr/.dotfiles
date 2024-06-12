@@ -1,0 +1,21 @@
+use_nerdfont = true
+
+[theme]
+background = "#282828E6"
+primary = "#EBDBB2"
+secondary = "#E9D9B0"
+title = "#8EC07C"
+playing = "#8EC07C"
+playing_selected = "#458588"
+playing_bg = "#1D2021"
+highlight = "#83A598"
+highlight_bg = "#1D2021"
+error = "#FFFFFF"
+error_bg = "#FE8019"
+statusbar = "#282828"
+statusbar_progress = "#83A598"
+statusbar_bg = "#8EC07C"
+cmdline = "#83A598"
+cmdline_bg = "#282828"
+
+statusbar_format = "%title - %album"
