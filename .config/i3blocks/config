@@ -1,77 +1,77 @@
 # [spotify]
-# command=~/computer/i3blocks-scripts/spotify.py
+# command=$SCRIPT_DIR/spotify.py
 # color=#b8bb26
 # interval=5
 
 [ncspot]
-command=~/computer/i3blocks-scripts/ncspot
+command=$SCRIPT_DIR/ncspot
 interval=2
 signal=10
 
 # [key_layout]
-# command=~/computer/i3blocks-scripts/key_layout
+# command=$SCRIPT_DIR/key_layout
 # interval=once
 # signal=1
 
 [key_layout_sway]
-command=~/computer/i3blocks-scripts/key_layout_sway
+command=$SCRIPT_DIR/key_layout_sway
 interval=once
 signal=1
 
 [volume]
-command=~/computer/i3blocks-scripts/volume
+command=$SCRIPT_DIR/volume
 interval=once
 signal=3
 
 [brightness]
-command=~/computer/i3blocks-scripts/brightness
+command=$SCRIPT_DIR/brightness
 markup=pango
 interval=once
 signal=2
 
 [wifi]
-command=~/computer/i3blocks-scripts/wifi
+command=$SCRIPT_DIR/wifi
 INTERFACE=wlp0s20f3
 interval=5
 
 # [ssid]
-# command=~/computer/i3blocks-scripts/ssid
+# command=$SCRIPT_DIR/ssid
 # INTERFACE=wlp0s20f3
 # interval=60
 
 # [wifi-strength]
-# command=~/computer/i3blocks-scripts/wifi-strength
+# command=$SCRIPT_DIR/wifi-strength
 # interval=5
 # INTERFACE=wlp0s20f3
 
 [load]
-command=~/computer/i3blocks-scripts/load
+command=$SCRIPT_DIR/load
 interval=10
 signal=10
 
 [cpu_temp]
-command=~/computer/i3blocks-scripts/cpu_temp
+command=$SCRIPT_DIR/cpu_temp
 markup=pango
 interval=10
 signal=10
 
 [memory]
-command=~/computer/i3blocks-scripts/memory
+command=$SCRIPT_DIR/memory
 interval=5
 signal=10
 
 [disk]
-command=~/computer/i3blocks-scripts/disk
+command=$SCRIPT_DIR/disk
 interval=60
 signal=10
 
 [battery]
-command=~/computer/i3blocks-scripts/battery2
+command=$SCRIPT_DIR/battery2
 markup=pango
 interval=10
 signal=10
 
 [datetime]
-command=date +"󰥔  %R %a %Y-%m-%d"
+command=$SCRIPT_DIR/datetime
 interval=5
 signal=10

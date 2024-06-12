@@ -314,7 +314,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command i3blocks
+    status_command SCRIPT_DIR=~/computer/i3blocks-scripts i3blocks
 
     font pango:Libre Baskerville, Noto Serif 14
 
