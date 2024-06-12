@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+
+LABEL[0]="󱑊"
+LABEL[1]="󱐿"
+LABEL[2]="󱑀"
+LABEL[3]="󱑁"
+LABEL[4]="󱑂"
+LABEL[5]="󱑃"
+LABEL[6]="󱑄"
+LABEL[7]="󱑅"
+LABEL[8]="󱑆"
+LABEL[9]="󱑇"
+LABEL[10]="󱑈"
+LABEL[11]="󱑉"
+
+# Pick clock icon based upon hour
+HOUR=$(date +"%H")
+INDEX=$((HOUR % 12))
+CHOSEN_LABEL=${LABEL[$INDEX]}
+
+# Get date string
+# Uncomment the date format you wish to use
+formatted_date() {
+    # HH:MM Weekday YYYY-MM-DD (24h)
+    date "+%R %a %F"
+
+    # HH:MM Day YYYY-MM-DD (12h)
+    # date "+%I:%M %a %F"
+
+    # Locale's date & time
+    # date "+%c"
+    
+    # HH:MM AM/PM Weekday, DD Month YYYY (12h)
+    # date "+%R %p, %d %B %Y"
+}
+
+formatted_date_short() {
+    # HH:MM (24h)
+    # date "+%R"
+
+    # HH:MM (12h)
+    # date "+%I:%M"
+    
+    # HH:MM YYYY-MM-DD
+    date "+%R %F"
+}
+
+# Full text
+echo "${CHOSEN_LABEL}  $(formatted_date)"
+# Short text
+echo "$(formatted_date_short)"
