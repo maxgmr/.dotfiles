@@ -48,7 +48,6 @@ lazy.setup({
 	"hrsh7th/cmp-path", -- path completion
 	-- "hrsh7th/cmp-cmdline", -- snippet completion
 	"hrsh7th/cmp-nvim-lua", -- nvim's lua api
-
 	"saecki/crates.nvim", -- crates.io deps completion
 	"David-Kunz/cmp-npm", -- npm packages completion
 	"saadparwaiz1/cmp_luasnip", -- luasnip completion

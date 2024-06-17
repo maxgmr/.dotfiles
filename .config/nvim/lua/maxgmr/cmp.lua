@@ -77,7 +77,6 @@ cmp.setup({
 				npm = "[NPM]",
 				nvim_lua = "[Nvim Lua]",
 				cmp_lsp_rs = "[LSP Rs]",
-				cmp_rime = "[Rime]",
 			})[entry.source.name]
 			return vim_item
 		end,
