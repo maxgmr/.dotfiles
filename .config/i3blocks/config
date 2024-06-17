@@ -20,7 +20,7 @@ signal=1
 
 [volume]
 command=$SCRIPT_DIR/volume
-interval=once
+interval=10
 signal=3
 
 [brightness]

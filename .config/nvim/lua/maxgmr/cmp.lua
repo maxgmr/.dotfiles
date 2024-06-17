@@ -73,10 +73,11 @@ cmp.setup({
 				buffer = "[Buffer]",
 				path = "[Path]",
 				-- cmdline = "[CMDLine]",
-				crates = "[Crates}",
+				crates = "[Crates]",
 				npm = "[NPM]",
 				nvim_lua = "[Nvim Lua]",
-				cmp_lsp_rs = "[CMP LSP Rs]",
+				cmp_lsp_rs = "[LSP Rs]",
+				cmp_rime = "[Rime]",
 			})[entry.source.name]
 			return vim_item
 		end,
