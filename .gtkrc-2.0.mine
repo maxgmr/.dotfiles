@@ -14,6 +14,3 @@ gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
-
-# for fcitx
-gtk-im-module="fcitx"

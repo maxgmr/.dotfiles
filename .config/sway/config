@@ -9,10 +9,6 @@
 # See FS#63021
 # Adapted from xorg's 50-systemd-user.sh, which achieves a similar goal.
 
-# Set IM modules to Fcitx5
-# exec QT_IM_MODULE=fcitx
-exec QT_IM_MODULES="wayland;fcitx;ibus"
-
 # Upstream refuses to set XDG_CURRENT_DESKTOP so we have to.
 exec systemctl --user set-environment XDG_CURRENT_DESKTOP=sway
 exec systemctl --user import-environment DISPLAY \
