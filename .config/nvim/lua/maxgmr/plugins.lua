@@ -54,6 +54,8 @@ lazy.setup({
 	"zjp-CN/nvim-cmp-lsp-rs", -- rust analyzer completion
 	"L3MON4D3/LuaSnip", -- snippet engine
 	"rafamadriz/friendly-snippets", -- large collection of snippets
+	"yehuohan/cmp-im", -- input method source for cmp-im
+	"yehuohan/cmp-im-zh", -- chinese tables for cmp-im
 
 	"williamboman/mason.nvim", -- lsp manager/installer
 	"williamboman/mason-lspconfig.nvim", -- connector btwn mason & lspconfig

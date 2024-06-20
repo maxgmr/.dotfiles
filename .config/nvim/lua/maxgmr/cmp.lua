@@ -77,6 +77,7 @@ cmp.setup({
 				npm = "[NPM]",
 				nvim_lua = "[Nvim Lua]",
 				cmp_lsp_rs = "[LSP Rs]",
+				IM = "[中文]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -92,6 +93,7 @@ cmp.setup({
 		{ name = "npm" },
 		{ name = "nvim_lua" },
 		{ name = "cmp_lsp_rs" },
+		{ name = "IM" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

@@ -3,6 +3,7 @@ require("maxgmr.options")
 require("maxgmr.plugins")
 
 require("maxgmr.colourscheme")
+require("maxgmr.cmpim")
 require("maxgmr.cmp")
 require("maxgmr.lsp")
 require("maxgmr.conform")

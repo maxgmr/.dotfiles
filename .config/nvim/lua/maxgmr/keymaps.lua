@@ -72,3 +72,8 @@ keymap("n", "<leader>ef", ":FormatEnable<CR>", opts)
 
 -- (unicode_picker) pick a unicode character with telescope
 vim.keymap.set("i", "<C-j>", require("unicode_picker").unicode_chars, opts)
+
+-- (cmp-im) toggle IM
+vim.keymap.set("i", "<C-z>", function()
+	require("cmp_im").toggle()
+end, opts)
