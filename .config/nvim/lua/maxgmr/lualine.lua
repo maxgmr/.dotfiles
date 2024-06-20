@@ -21,6 +21,19 @@ end
 
 the_eye()
 
+local lang_mode = function()
+	local cmp_im_ok_status, cmp_im = pcall(require, "cmp_im")
+	if not cmp_im_ok_status then
+		return ""
+	else
+		if cmp_im.source:is_available() then
+			return "中"
+		else
+			return "英"
+		end
+	end
+end
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
@@ -51,6 +64,20 @@ lualine.setup({
 				padding = {
 					left = 1,
 					right = 0,
+				},
+			},
+			{
+				lang_mode,
+				component_separators = {
+					left = "",
+					right = "",
+				},
+				padding = {
+					left = 1,
+					right = 0,
+				},
+				refresh = {
+					statusline = 250,
 				},
 			},
 			"mode",
