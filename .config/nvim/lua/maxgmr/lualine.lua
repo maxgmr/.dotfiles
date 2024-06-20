@@ -82,7 +82,19 @@ lualine.setup({
 			},
 			"mode",
 		},
-		lualine_b = { "branch", "diff", "diagnostics" },
+		lualine_b = {
+			"branch",
+			"diff",
+			{
+				"diagnostics",
+				symbols = {
+					error = globals.error_symbol,
+					warn = globals.warning_symbol,
+					info = globals.info_symbol,
+					hint = globals.hint_symbol,
+				},
+			},
+		},
 		lualine_c = {
 			{
 				"filename",
