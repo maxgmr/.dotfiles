@@ -52,7 +52,10 @@ lazy.setup({
 	"David-Kunz/cmp-npm", -- npm packages completion
 	"saadparwaiz1/cmp_luasnip", -- luasnip completion
 	"zjp-CN/nvim-cmp-lsp-rs", -- rust analyzer completion
-	"L3MON4D3/LuaSnip", -- snippet engine
+	{
+		"L3MON4D3/LuaSnip", -- snippet engine
+		build = "make install_jsregexp", -- variable/placeholder transformations
+	},
 	"rafamadriz/friendly-snippets", -- large collection of snippets
 	"yehuohan/cmp-im", -- input method source for cmp-im
 	"yehuohan/cmp-im-zh", -- chinese tables for cmp-im
