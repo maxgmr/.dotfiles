@@ -34,6 +34,8 @@ local options = {
 	scrolloff = 12,
 
 	updatetime = 300,
+
+	fixendofline = false,
 }
 
 vim.opt.shortmess:append("c")
