@@ -1,6 +1,7 @@
 require("maxgmr.startup")
 require("maxgmr.options")
 require("maxgmr.plugins")
+require("maxgmr.autocmds")
 
 require("maxgmr.colourscheme")
 require("maxgmr.cmpim")
