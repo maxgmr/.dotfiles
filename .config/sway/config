@@ -401,7 +401,7 @@ bindsym --to-code {
 
 # Open Firefox window
 bindsym --to-code {
-    $mod+t exec firefox
+    $mod+t exec firefox -p default-release
 }
 
 include /etc/sway/config.d/*
