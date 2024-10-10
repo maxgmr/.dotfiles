@@ -1,6 +1,6 @@
 [user]
 	name = maxgmr
-	email = mxzmxz120@gmail.com
+	email = mgilmour@maxgmr.ca
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
