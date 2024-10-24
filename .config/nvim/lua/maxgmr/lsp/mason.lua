@@ -11,7 +11,8 @@ local servers = {
 	"html", -- html
 	"jsonls", -- json
 	"jdtls", -- java
-	"tsserver", -- js, typescript
+	--[[ "tsserver", -- js, typescript (DEPRECATED) ]]
+	"ts_ls", -- js, typescript
 	-- "ltex",                   -- latex
 	"lua_ls", -- lua
 	"markdown_oxide", -- markdown
