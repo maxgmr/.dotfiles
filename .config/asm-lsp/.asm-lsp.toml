@@ -1,0 +1,21 @@
+version = "0.1"
+
+[assemblers]
+gas = false
+go = false
+z80 = false
+masm = false
+nasm = false
+
+[instruction_sets]
+x86 = false
+x86_64 = false
+z80 = false
+arm = false
+arm64 = false
+riscv = false
+
+[opts]
+# compiler = "zig"            # need "cc" as the first argument in `compile_flags.txt`
+diagnostics = false
+default_diagnostics = false
