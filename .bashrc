@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/computer/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/computer/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.config/bin"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
