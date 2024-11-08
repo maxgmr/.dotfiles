@@ -10,4 +10,5 @@ toggleterm.setup({
 	close_on_exit = true,
 	shade_terminals = false,
 	persist_mode = false,
+	direction = "float",
 })

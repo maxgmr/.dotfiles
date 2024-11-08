@@ -82,3 +82,6 @@ vim.keymap.set("i", "<C-j>", require("unicode_picker").unicode_chars, opts)
 vim.keymap.set("n", "<leader>zh", function()
 	require("cmp_im").toggle()
 end, opts)
+
+-- (floaterm) open terminal
+--[[ keymap("n", "<C-\\>", ":FloatermToggle --disposable<CR>", opts) ]]

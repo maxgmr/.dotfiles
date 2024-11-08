@@ -91,6 +91,8 @@ lazy.setup({
 	"willothy/nvim-cokeline", -- buffer line
 	"nvim-lualine/lualine.nvim", -- bottom status line
 
+	--[[ "voldikss/vim-floaterm", -- floating terminal ]]
+
 	{
 		"akinsho/toggleterm.nvim", -- terminal
 		version = "*",
