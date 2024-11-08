@@ -9,10 +9,18 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/computer/gems/bin:$HO
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
 # PS1='[\u@\h \W]\$ '
 # PS1='\e[1m[\e[34m\u\e(B\e[m\e[1m@\e[36m\h\e(B\e[m\e[1m \W]\$\e(B\e[m '
 # PS1='\[\e[1m\][\[\e[34m\]\u\[\e(B\e[m\e[1m\]@\[\e[36m\]\h\[\e(B\e[m\e[1m\] \W]\[\$\e(B\e[m\] '
 PS1='\[\e[1m\][\A \[\e[1;32m\]\u\[\e[m\e[1m\]@\[\e[1;36m\]\h \[\e[m\]\W\[\e[1m\]]\[\]\$ \[\e[m\]'
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] &&
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
+    source "$BASE16_SHELL/profile_helper.sh"
+base16_max-dark
 
 # Install Ruby Gems to ~/computer/gems
 export GEM_HOME="$HOME/computer/gems"

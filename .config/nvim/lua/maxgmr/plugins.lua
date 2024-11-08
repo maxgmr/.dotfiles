@@ -29,6 +29,7 @@ lazy.setup({
 	"nvim-lua/plenary.nvim", -- standard helpers
 
 	"ellisonleao/gruvbox.nvim", -- colour scheme
+	-- "chriskempson/base16-vim",
 
 	{
 		"vhyrro/luarocks.nvim", -- luarocks
