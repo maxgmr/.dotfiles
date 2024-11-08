@@ -2,7 +2,7 @@
 local opts = { noremap = true, silent = true }
 
 -- keymap shorthand
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- BASE VIM KEYMAPS
 -- remap space as leader key
@@ -19,6 +19,11 @@ keymap("v", ">", ">gv", opts)
 
 -- (visual) stop yank rewrite on paste
 keymap("v", "p", '"_dP', opts)
+
+-- (normal) swap between light and dark theme
+keymap("n", "<leader>sc", function()
+	require("colourswap").swapLightDarkTheme()
+end, opts)
 
 -- PLUGIN KEYMAPS
 -- (telescope) find files

@@ -4,6 +4,7 @@ require("maxgmr.plugins")
 require("maxgmr.autocmds")
 
 require("maxgmr.colourscheme")
+-- require("maxgmr.colourswap")
 require("maxgmr.cmpim")
 require("maxgmr.cmp")
 require("maxgmr.lsp")
