@@ -13,7 +13,8 @@ alias grep='grep --color=auto'
 # PS1='[\u@\h \W]\$ '
 # PS1='\e[1m[\e[34m\u\e(B\e[m\e[1m@\e[36m\h\e(B\e[m\e[1m \W]\$\e(B\e[m '
 # PS1='\[\e[1m\][\[\e[34m\]\u\[\e(B\e[m\e[1m\]@\[\e[36m\]\h\[\e(B\e[m\e[1m\] \W]\[\$\e(B\e[m\] '
-PS1='\[\e[1m\][\A \[\e[1;32m\]\u\[\e[m\e[1m\]@\[\e[1;36m\]\h \[\e[m\]\W\[\e[1m\]]\[\]\$ \[\e[m\]'
+# PS1='\[\e[1m\][\A \[\e[1;32m\]\u\[\e[m\e[1m\]@\[\e[1;36m\]\h \[\e[m\]\W\[\e[1m\]]\[\]\$ \[\e[m\]'
+PS1='\[\e[1m\]\[\e[1;32m\]\u\[\e[m\e[1m\]@\[\e[1;34m\]\h\[\e[m\]: \W \[\e[1m\]\[\]\$ \[\e[m\]'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -32,3 +33,4 @@ alias browsepackages="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=rever
 alias ex='exit'
 alias dcss='crawl-tiles'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias sc="source sc"

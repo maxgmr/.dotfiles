@@ -23,7 +23,11 @@ require("gruvbox").setup({
 	transparent_mode = false,
 })
 
-vim.o.background = "dark"
+if os.getenv("BASE16_THEME") == "max-dark" then
+	vim.o.background = "dark"
+else
+	vim.o.background = "light"
+end
 
 local colourscheme = "gruvbox"
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colourscheme)
