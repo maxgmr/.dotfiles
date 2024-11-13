@@ -404,4 +404,9 @@ bindsym --to-code {
     $mod+t exec firefox
 }
 
+# Open scratchpad
+bindsym --to-code {
+    $mod+Alt+s exec $term nvim /home/$USER/scratchpad
+}
+
 include /etc/sway/config.d/*

@@ -34,3 +34,4 @@ alias ex='exit'
 alias dcss='crawl-tiles'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sc="source sc"
+alias sp="nvim /home/$USER/scratchpad"
