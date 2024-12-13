@@ -23,9 +23,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     source "$BASE16_SHELL/profile_helper.sh"
 base16_max-dark
 
-# Refresh screen to apply colours
-clear
-
 # Install Ruby Gems to ~/computer/gems
 export GEM_HOME="$HOME/computer/gems"
 
