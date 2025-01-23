@@ -18,7 +18,7 @@ conform.setup({
 
 	formatters_by_ft = {
 		lua = { "stylua" },
-		asm = { "asmfmt" },
+		--[[ asm = { "asmfmt" }, ]]
 		javascript = { "prettierd" },
 		typescript = { "prettierd" },
 		javascriptreact = { "prettierd" },

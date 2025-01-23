@@ -1,5 +1,0 @@
-CompileFlags:
-  Add: [-Wall, -std=c2x] # enable more warnings
-Diagnostics:
-  ClangTidy:
-    Add: [modernize*, bugprone*, readability*]
