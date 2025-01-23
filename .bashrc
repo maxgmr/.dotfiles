@@ -2,7 +2,19 @@
 # ~/.bashrc
 #
 
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cargo/env:$HOME/computer/gems/bin:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.config/bin"
+# PATH STUFF
+# Cargo
+PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.cargo/env"
+# Ruby gems
+PATH="$PATH:$HOME/computer/gems/bin"
+PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
+# Config binaries
+PATH="$PATH:$HOME/.config/bin"
+# Cross-compiler
+PATH="$PATH:$HOME/opt/cross_i686-elf/bin"
+
+export PATH
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
