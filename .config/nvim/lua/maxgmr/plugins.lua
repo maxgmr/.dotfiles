@@ -104,5 +104,11 @@ lazy.setup({
 	"goolord/alpha-nvim", -- start screen
 
 	"uga-rosa/utf8.nvim", -- utf-8 support
-	"cosmicboots/unicode_picker.nvim", -- unicode character picker
+	{
+		"cosmicboots/unicode_picker.nvim", -- unicode character picker
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+		},
+		config = true,
+	},
 })

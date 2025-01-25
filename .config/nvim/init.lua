@@ -20,6 +20,7 @@ require("maxgmr.toggleterm")
 require("maxgmr.alpha")
 require("maxgmr.lualine")
 require("maxgmr.gitsigns")
+require("maxgmr.unicodepicker")
 require("maxgmr.neorg")
 
 require("maxgmr.keymaps")
