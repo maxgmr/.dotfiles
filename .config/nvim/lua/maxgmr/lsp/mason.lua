@@ -1,6 +1,7 @@
 local servers = {
-	"awk_ls", -- awk
+	"arduino_language_server", -- arduino
 	"asm_lsp", -- assembly
+	"awk_ls", -- awk
 	"bashls", -- bash
 	"clangd", -- c, c++
 	"csharp_ls", -- c#
