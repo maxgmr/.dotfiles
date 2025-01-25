@@ -52,6 +52,9 @@ keymap("n", "<leader>L", ":Lazy<CR>", opts)
 -- (mason) open Mason
 keymap("n", "<leader>M", ":Mason<CR>", opts)
 
+-- (nvim-lspconfig) open LSP info
+keymap("n", "<leader>li", ":LspInfo<CR>", opts)
+
 -- (cokeline) cycle buffers
 keymap("n", "<S-Tab>", "<Plug>(cokeline-focus-prev)", opts)
 keymap("n", "<Tab>", "<Plug>(cokeline-focus-next)", opts)
