@@ -103,6 +103,16 @@ lazy.setup({
 
 	"goolord/alpha-nvim", -- start screen
 
+	{
+		"iamcco/markdown-preview.nvim", -- Markdown live preview
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	},
+
 	"uga-rosa/utf8.nvim", -- utf-8 support
 	{
 		"cosmicboots/unicode_picker.nvim", -- unicode character picker

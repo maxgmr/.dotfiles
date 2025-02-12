@@ -86,5 +86,10 @@ vim.keymap.set("n", "<leader>zh", function()
 	require("cmp_im").toggle()
 end, opts)
 
+-- (markdown-preview) open markdown
+keymap("n", "<leader>md", ":MarkdownPreview<CR>", opts)
+-- (markdown-preview) close markdown
+keymap("n", "<leader>mD", ":MarkdownPreviewStop<CR>", opts)
+
 -- (floaterm) open terminal
 --[[ keymap("n", "<C-\\>", ":FloatermToggle --disposable<CR>", opts) ]]
