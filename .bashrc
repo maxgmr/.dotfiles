@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# Get env vars
+export $(envsubst <$HOME/.config/env)
+
 # PATH STUFF
 # Cargo
 PATH="$PATH:$HOME/.cargo/bin"
