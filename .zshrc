@@ -2,15 +2,13 @@
 # ~/.zshrc
 #
 
-# If not running interactively, don't do anything
-if [[ -o login ]]; then
-    return
-fi
-
 # History in cache directory
 HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=$XDG_CACHE_HOME/zsh/history
+
+# Ignore dupes in history
+setopt hist_ignore_all_dups
 
 # Basic auto/tab complete
  autoload -U compinit
@@ -19,7 +17,35 @@ HISTFILE=$XDG_CACHE_HOME/zsh/history
  compinit
  _comp_options+=(globdots)   # Include hidden files
 
-# Use vim keys in tab complete menu
+# Activate vi mode
+bindkey -v
+
+# Remove mode switching delay
+KEYTIMEOUT=5
+
+# Change cursor shape for different vi modes
+function zle-keymap-select {
+    if [[ ${KEYMAP} == vicmd ]] ||
+        [[ $1 = "block" ]]; then
+    echo -ne "\e[2 q"
+    elif [[ ${KEYMAP} == main ]] ||
+        [[ ${KEYMAP} == viins ]] ||
+        [[ ${KEYMAP} = "" ]]; then
+    echo -ne "\e[6 q"
+    fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # init "vi insert" as keymap
+}
+zle -N zle-line-init
+# Make sure cursor is beam by default
+_beam_cursor() {
+    echo -ne "\e[5 q"
+}
+precmd_function+=(_beam_cursor)
+
+# Use vi keys in tab complete menu
 bindkey -M menuselect "h" vi-backward-char
 bindkey -M menuselect "k" vi-up-line-or-history
 bindkey -M menuselect "l" vi-forward-char
