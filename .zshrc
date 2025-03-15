@@ -7,6 +7,9 @@ HISTSIZE=5000
 SAVEHIST=5000
 HISTFILE=$XDG_CACHE_HOME/zsh/history
 
+# Stop weird glob behaviour
+unsetopt nomatch
+
 # Ignore dupes in history
 setopt hist_ignore_all_dups
 
