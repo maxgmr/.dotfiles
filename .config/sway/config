@@ -97,17 +97,13 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-# set $menu dmenu_path | bemenu-run -p "Whaddaya want, boss?" --tb "#282828" --tf "#83a598" --fb "#504945" --ff "#fe8019" --nb "#282828" --nf "#ebdbb2" --hb "#282828" --hf "#8ec07c" --af "#e9d9b0" --fn "GoMono Nerd Font Mono 16" | xargs swaymsg exec --
 set $menu dmenu_path | bemenu-run -p "" --tb "#282828" --tf "#83a598" --fb "#504945" --ff "#fe8019" --nb "#282828" --nf "#ebdbb2" --hb "#282828" --hf "#8ec07c" --af "#e9d9b0" --fn "Libre Baskerville Regular 16" | xargs swaymsg exec --
-# set $menu dmenu_path | bemenu-run -p "Whaddaya want, boss?" --tb "#282828" --tf "#83a598" --fb "#504945" --ff "#fe8019" --nb "#282828" --nf "#ebdbb2" --hb "#282828" --hf "#8ec07c" --af "#e9d9b0" --fn "MingLiU Regular 16" | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/media/wallpapers/black_one.png fill
-# output * bg ~/media/wallpapers/obfuscator_crop.jpg fill
-#
+output * bg ~/media/wallpapers/dore_gustave-ship.jpg fill
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -305,29 +301,12 @@ bindsym --to-code {
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    swaybar_command swaybar
-    # swaybar_command waybar
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    status_command SCRIPT_DIR=~/computer/i3blocks-scripts i3blocks
-
-    font pango:Libre Baskerville, Noto Serif 14
-
-    colors {
-        background $bg0-coloure6
-        statusline $fg-colour
-        separator $fg-colour
-        # border, bg, text
-        focused_workspace $bg0-coloure6 $bg0-coloure6 $aqua-coloure6
-        inactive_workspace $bg0-coloure6 $bg0-coloure6 $lgrey-coloure6
-        urgent_workspace $red-coloure6 $bg0-coloure6 $red-coloure6
-    }
+    swaybar_command waybar
 }
 
 
 # Font
-font pango:Libre Baskerville, Noto Serif 12
+font pango:LibreBaskerville Nerd Font Propo, Noto Serif 12
 
 # Cursor Theme
 seat seat0 xcursor_theme Hackneyed 30
@@ -351,7 +330,7 @@ gaps inner 7
 smart_gaps on
 
 
-# # Disable Titlebars on Certain Windows
+# Disable Titlebars on Certain Windows
 # for_window [app_id="foot"] border none
 
 # Disable all Borders
@@ -365,28 +344,24 @@ smart_borders on
 
 # Custom Bindings
 # Volume Control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 --max-volume 100 && pkill -RTMIN+3 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 --max-volume 100 && pkill -RTMIN+3 i3blocks
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 --max-volume 300 && pkill -RTMIN+3 i3blocks
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 --max-volume 300 && pkill -RTMIN+3 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+3 i3blocks
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 --max-volume 100
+bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 --max-volume 100
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5 --max-volume 300
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5 --max-volume 300
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness Adjustment
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% && pkill -RTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Keyboard Layout Switcher
-# bindsym Control+$mod+`1 exec --no-startup-id setxkbmap us && pkill -RTMIN+1 i3blocks
-# bindsym Control+$mod+2 exec --no-startup-id setxkbmap us -variant intl && pkill -RTMIN+1 i3blocks
-# bindsym Control+$mod+3 exec --no-startup-id setxkbmap ru && pkill -RTMIN+1 i3blocks
-# bindsym Control+$mod+4 exec --no-startup-id setxkbmap gr && pkill -RTMIN+1 i3blocks
 input type:keyboard {
     xkb_layout us,ru,gr
     xkb_variant altgr-intl,,
 }
 bindsym --to-code {
-    $mod+Ctrl+Shift_L exec --no-startup-id swaymsg input type:keyboard xkb_switch_layout next && pkill -RTMIN+1 i3blocks
+    $mod+Ctrl+Shift_L exec --no-startup-id swaymsg input type:keyboard xkb_switch_layout next
 }
 
 # Take Screenshot & Edit

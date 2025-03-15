@@ -1,0 +1,171 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 10, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "disk",
+        "sway/language",
+        "tray"
+    ],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "Ⅰ",
+            "2": "Ⅱ",
+            "3": "Ⅲ",
+            "4": "Ⅳ",
+            "5": "Ⅴ",
+            "6": "Ⅵ",
+            "7": "Ⅶ",
+            "8": "Ⅷ",
+            "9": "Ⅸ",
+            "10": "Ⅹ"
+        }
+    },
+    "sway/language": {
+        "format": "{shortDescription}"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "timezone": "America/Vancouver",
+        "format": "{:%R  %a  %F}",
+        "tooltip-format": "<big>{:%T}</big>\n<span font_family=\"GoMono Nerd Font Mono\"><small>{calendar}</small></span>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "states": {
+            "good": 0,
+            "normal": 25,
+            "warning": 50,
+            "urgent": 75,
+            "critical": 95
+        },
+        "interval": 10,
+        "format": "{usage}% ",
+        "tooltip": true
+    },
+    "memory": {
+        "states": {
+            "good": 10,
+            "normal": 25,
+            "warning": 40,
+            "urgent": 75,
+            "critical": 95
+        },
+        "format": "{}% "
+    },
+    "disk": {
+        "format": "{}%  "
+    },
+    "temperature": {
+        "tooltip": false,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C 󰈸",
+        "format": "{temperatureC}°C 󰔏"
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "normal": 75,
+            "warning": 40,
+            "urgent": 25,
+            "critical": 10
+        },
+        "format": "{capacity}% ({time})  {icon}",
+        "format-time": "{H}:{m}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰢝",
+        "format-plugged": "{capacity}% ",
+        "tooltip-format": "Health: {health}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "network": {
+        "states": {
+            "good": 95,
+            "normal": 75,
+            "warning": 40,
+            "urgent": 25,
+            "critical": 10
+        },
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈁",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol"
+    }
+}
