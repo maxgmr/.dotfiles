@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background: rgba(40, 40, 40, 0.8);
+  background: rgba(40, 40, 40, 0.9);
   color: #ebdbb2;
 }
 
@@ -45,7 +45,7 @@ window#waybar {
 }
 .critical {
   color: #fb4934;
-  background-color: rgba(124, 111, 100, 0.8);
+  background-color: rgba(124, 111, 100, 0.9);
 }
 
 /* top right bottom left */

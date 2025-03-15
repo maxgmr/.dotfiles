@@ -75,16 +75,17 @@
     },
     "memory": {
         "states": {
-            "good": 10,
+            "good": 0,
             "normal": 25,
-            "warning": 40,
+            "warning": 50,
             "urgent": 75,
             "critical": 95
         },
         "format": "{}% "
     },
     "disk": {
-        "format": "{}%  "
+        "format": "{percentage_used}%  ",
+        "tooltip-format": "{used}/{total}"
     },
     "temperature": {
         "tooltip": false,
@@ -109,7 +110,7 @@
     },
     "battery": {
         "states": {
-            "good": 95,
+            "good": 100,
             "normal": 75,
             "warning": 40,
             "urgent": 25,
