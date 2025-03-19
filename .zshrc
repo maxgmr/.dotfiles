@@ -13,6 +13,11 @@ unsetopt nomatch
 # Ignore dupes in history
 setopt hist_ignore_all_dups
 
+# Allows fun stuff in prompts
+setopt prompt_subst
+
+typeset -a precmd_functions
+
 # Basic auto/tab complete
  autoload -U compinit
  zstyle ":completion:*" menu select
@@ -46,7 +51,7 @@ zle -N zle-line-init
 _beam_cursor() {
     echo -ne "\e[5 q"
 }
-precmd_function+=(_beam_cursor)
+precmd_functions+=(_beam_cursor)
 
 # Use vi keys in tab complete menu
 bindkey -M menuselect "h" vi-backward-char
@@ -59,7 +64,25 @@ bindkey -v "^?" backward-delete-char
 autoload -U colors && colors
 
 # Set prompt
-PROMPT="%B%F{green}%n%f@%F{blue}%m%f%b: %1~ %B>%b "
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+zstyle ":vcs_info:git*" formats "%F{yellow}%b%f "
+
+_set_prompt() {
+    vcs_info
+
+    # Prompt start
+    PROMPT="%B%F{green}%n%f@%F{blue}%m%f%b: "
+
+    if [[ ! -z ${vcs_info_msg_0_} ]]; then
+        PROMPT+="${vcs_info_msg_0_}"
+    fi
+
+    # Prompt end
+    PROMPT+="%1~ %B>%b "
+}
+precmd_functions+=(_set_prompt)
+
 
 # Stop git tab completion freeze
 __git_files () {
