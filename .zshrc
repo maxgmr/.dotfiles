@@ -49,7 +49,7 @@ zle-line-init() {
 zle -N zle-line-init
 # Make sure cursor is beam by default
 _beam_cursor() {
-    echo -ne "\e[5 q"
+    echo -ne "\e[6 q"
 }
 precmd_functions+=(_beam_cursor)
 
