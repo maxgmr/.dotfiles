@@ -1,45 +1,45 @@
 -- :help options
 local options = {
-	backup = false,
-	writebackup = false,
-	undofile = true,
+    backup = false,
+    writebackup = false,
+    undofile = true,
 
-	fileencoding = "utf-8",
+    fileencoding = "utf-8",
 
-	clipboard = "unnamedplus",
+    clipboard = "unnamedplus",
 
-	incsearch = true,
-	hlsearch = false,
-	ignorecase = true,
-	smartcase = true,
+    incsearch = true,
+    hlsearch = false,
+    ignorecase = true,
+    smartcase = true,
 
-	splitbelow = true,
-	splitright = true,
+    splitbelow = true,
+    splitright = true,
 
-	termguicolors = true,
-	showmode = false,
-	completeopt = { "menuone", "noselect" },
-	pumheight = 8,
+    termguicolors = true,
+    showmode = false,
+    completeopt = { "menuone", "noselect" },
+    pumheight = 8,
 
-	number = true,
-	relativenumber = true,
-	cursorline = false,
-	numberwidth = 4,
-	signcolumn = "yes",
+    number = true,
+    relativenumber = true,
+    cursorline = false,
+    numberwidth = 4,
+    signcolumn = "yes",
 
-	tabstop = 4,
-	softtabstop = 4,
-	shiftwidth = 4,
-	expandtab = true,
-	scrolloff = 12,
+    tabstop = 4,
+    softtabstop = 4,
+    shiftwidth = 4,
+    expandtab = true,
+    scrolloff = 12,
 
-	updatetime = 300,
+    updatetime = 300,
 
-	fixendofline = false,
+    fixendofline = false,
 }
 
 vim.opt.shortmess:append("c")
 
 for k, v in pairs(options) do
-	vim.opt[k] = v
+    vim.opt[k] = v
 end
