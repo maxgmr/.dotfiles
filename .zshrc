@@ -100,3 +100,5 @@ alias obsidian="OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatfor
 # Enable syntax highlighting
 # Make sure the plugin is installed! (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+[ -f "/home/maxgmr/.ghcup/env" ] && . "/home/maxgmr/.ghcup/env" # ghcup-env
