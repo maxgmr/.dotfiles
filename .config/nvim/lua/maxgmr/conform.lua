@@ -26,7 +26,6 @@ conform.setup({
         json = { "prettierd" },
         java = { "google-java-format" },
         markdown = { "prettierd" },
-        haskell = { "hindent" },
         html = { "prettierd" },
         bash = { "shfmt" },
         toml = { "taplo" },
