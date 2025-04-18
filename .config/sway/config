@@ -103,6 +103,7 @@ set $menu dmenu_path | bemenu-run -p "" --tb "#282828" --tf "#83a598" --fb "#504
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/media/wallpapers/dore_gustave-ship.jpg fill
+# output * bg ~/media/wallpapers/skipper_blue.jpg fill
 
 # Example configuration:
 #
