@@ -75,6 +75,7 @@ _set_prompt() {
     PROMPT="%B%F{green}%n%f@%F{blue}%m%f%b: "
 
     if [[ ! -z ${vcs_info_msg_0_} ]]; then
+        PROMPT+="%F{yellow}%BЧ%f%b-"
         PROMPT+="${vcs_info_msg_0_}"
     fi
 
