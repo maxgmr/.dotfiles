@@ -18,6 +18,9 @@ setopt prompt_subst
 
 typeset -a precmd_functions
 
+# No duplicates in $PATH
+typeset -U path
+
 # Basic auto/tab complete
  autoload -U compinit
  zstyle ":completion:*" menu select
