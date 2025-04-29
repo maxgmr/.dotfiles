@@ -100,6 +100,7 @@ alias ls="lsd"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias sp="nvim $HOME/scratchpad"
 alias obsidian="OBSIDIAN_USE_WAYLAND=1 obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland"
+alias hl="uwsm start hyprland.desktop"
 
 # Enable syntax highlighting
 # Make sure the plugin is installed! (https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
