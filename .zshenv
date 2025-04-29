@@ -19,4 +19,4 @@ path+=("$HOME/.config/bin")
 path+=("$HOME/opt/cross_i686-elf/bin")
 
 # Get env vars
-export $(envsubst <$HOME/.config/env)
+source "$HOME/.config/env" 
