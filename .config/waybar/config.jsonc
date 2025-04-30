@@ -22,7 +22,6 @@
         "memory",
         "temperature",
         "disk",
-        "hyprland/language",
         "tray"
     ],
     // Modules configuration
@@ -43,9 +42,6 @@
             "9": "Ⅸ",
             "10": "Ⅹ"
         }
-    },
-    "hyprland/language": {
-        "format": "{shortDescription}"
     },
     "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
