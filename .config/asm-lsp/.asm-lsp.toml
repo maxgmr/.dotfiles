@@ -4,6 +4,6 @@ instruction_set = "x86/x86-64"
 
 [default_config.opts]
 compiler = "nasm"
-compile_flags_txt = ["-felf64", "-Wall"]
+compile_flags_txt = ["-felf64"]
 diagnostics = true
 default_diagnotics = true
