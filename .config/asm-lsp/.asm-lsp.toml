@@ -2,7 +2,8 @@
 assembler = "nasm"
 instruction_set = "x86/x86-64"
 
-[opts]
-compiler = "clang"
+[default_config.opts]
+compiler = "nasm"
+compile_flags_txt = ["-felf64", "-Wall"]
 diagnostics = true
 default_diagnotics = true
