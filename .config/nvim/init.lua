@@ -17,7 +17,7 @@ require("maxgmr.comment")
 require("maxgmr.nvimtree")
 require("maxgmr.cokeline")
 require("maxgmr.toggleterm")
-require("maxgmr.alpha")
+--[[ require("maxgmr.alpha") ]]
 require("maxgmr.lualine")
 require("maxgmr.gitsigns")
 require("maxgmr.unicodepicker")

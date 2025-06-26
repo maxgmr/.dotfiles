@@ -101,7 +101,7 @@ lazy.setup({
 
 	"lewis6991/gitsigns.nvim", -- git line decorations
 
-	"goolord/alpha-nvim", -- start screen
+	--[[ "goolord/alpha-nvim", -- start screen ]]
 
 	{
 		"iamcco/markdown-preview.nvim", -- Markdown live preview
