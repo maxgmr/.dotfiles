@@ -1,10 +1,15 @@
 local opts = {
-    settings = {
-        ["rust-analyzer"] = {
-            checkOnSave = {
-                command = "clippy",
-            }
-        }
-    }
+	settings = {
+		["rust-analyzer"] = {
+			check = {
+				command = "clippy",
+			},
+			diagnostics = {
+				styleLints = {
+					enable = true,
+				},
+			},
+		},
+	},
 }
 return opts
