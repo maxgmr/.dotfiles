@@ -124,7 +124,8 @@
             "",
             "",
             ""
-        ]
+        ],
+        "interval": 5
     },
     "network": {
         "states": {
