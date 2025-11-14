@@ -8,6 +8,10 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [core]
-	editor = nvim
+    editor = nvim
 [init]
 	defaultBranch = main
+[commit]
+    verbose = true
+[log]
+    decorate = short
