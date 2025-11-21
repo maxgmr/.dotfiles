@@ -1,4 +1,4 @@
-local status_ok, _ = pcall(require, "lspconfig")
+local status_ok, _ = pcall(require, "vim.lsp.config")
 if not status_ok then
 	vim.notify("ERROR: Failed to load lspconfig.")
 	return
