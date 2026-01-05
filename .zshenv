@@ -17,6 +17,8 @@ path+=("$HOME/.local/share/gem/ruby/3.0.0/bin")
 path+=("$HOME/.config/bin")
 # Cross-compiler
 path+=("$HOME/opt/cross_i686-elf/bin")
+# Global NPM programs
+path+=("$HOME/.npm-global/bin")
 
 # Get env vars
 source "$HOME/.config/env" 
