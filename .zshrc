@@ -107,3 +107,15 @@ alias hl="uwsm start hyprland.desktop"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 [ -f "/home/maxgmr/.ghcup/env" ] && . "/home/maxgmr/.ghcup/env" # ghcup-env
+# >>> conda lazy init >>>
+conda() {
+    # Remove this lazy wrapper
+    unset -f conda
+
+    # Run the real conda hook now
+    eval "$(/usr/bin/conda shell.zsh hook 2> /dev/null)"
+
+    # Re-run the original command
+    conda "$@"
+}
+# <<< conda lazy init <<<
