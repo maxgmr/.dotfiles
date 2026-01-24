@@ -19,6 +19,8 @@ path+=("$HOME/.config/bin")
 path+=("$HOME/opt/cross_i686-elf/bin")
 # Global NPM programs
 path+=("$HOME/.npm-global/bin")
+# Local binaries
+path+=("$HOME/.local/bin")
 
 # Get env vars
 source "$HOME/.config/env" 
