@@ -1,0 +1,8 @@
+require("hyprland/monitor")
+require("hyprland/autostart")
+require("hyprland/environment_variables")
+require("hyprland/look_and_feel")
+require("hyprland/input")
+require("hyprland/keybindings")
+require("hyprland/windows_and_workspaces")
+require("hyprland/ecosystem")
