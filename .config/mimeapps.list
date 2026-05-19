@@ -1,0 +1,19 @@
+[Default Applications]
+inode/directory=pacmanfm.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-38U4P2.desktop
+message/rfc822=userapp-Thunderbird-38U4P2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-38U4P2.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+x-scheme-handler/discord=discord.desktop
+image/jpeg=swayimg.desktop
+image/png=swayimg.desktop
+image/gif=swayimg.desktop
+video/mp4=vlc.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-38U4P2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-38U4P2.desktop;
