@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Find the useful commands file
+readonly FILE_NAME="useful_commands"
+
+XDG_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}"
+
+readonly CANDIDATES=(
+	"${XDG_DATA_DIR}/uc/${FILE_NAME}"
+	"${HOME}/.${FILE_NAME}"
+	"${HOME}/${FILE_NAME}"
+)
+
+target_file=""
+for path in "${CANDIDATES[@]}"; do
+	if [[ -f "$path" ]]; then
+		target_file="$path"
+		break
+	fi
+done
+
+if [[ -z "$target_file" ]]; then
+	echo "Error: '${FILE_NAME}' could not be found in any of the standard locations." >&2
+	exit 1
+fi
+
+# Argument parsing
+EDIT_MODE=false
+if [[ "${1:-}" == "--edit" ]]; then
+	EDIT_MODE=true
+	shift
+fi
+
+# Process execution
+#  - If `--edit` passed, edit the useful command list
+#  - If no args given, print the entire useful command list
+#  - If args are given, pass them to grep and display the filtered
+#    command list
+if [[ "$EDIT_MODE" == true ]]; then
+	"${EDITOR:-nano}" "$target_file"
+elif (( $# == 0 )); then
+	cat "$target_file"
+else
+	grep -iE "$@" "$target_file"
+fi

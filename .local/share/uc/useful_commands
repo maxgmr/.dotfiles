@@ -1,0 +1,17 @@
+Update Gentoo repo:			emaint sync -a
+Upgrade system:				emerge -uUD @world
+Remove package:				emerge -c <pkg>
+
+See USE flags applied to package:	equery uses <pkg>
+See package owning file:		equery belongs <path>
+
+See OpenRC services:			rc-status
+Start OpenRC service:			rc-service <serv> start
+Enable OpenRC service:			rc-update [--user] add <serv> <default|boot|...>
+Disable OpenRC service:			rc-update [--user] del <serv> <default|boot|...>
+
+View firewall rules:			nft list ruleset
+
+Reload AutoFS config:			/etc/init.d/autofs reload
+
+Export public key:			gpg --armor --export <id>
