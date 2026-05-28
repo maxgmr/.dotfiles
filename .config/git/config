@@ -1,0 +1,35 @@
+[user]
+	name = Max Gilmour
+	email = mgilmour@maxgmr.ca
+	signingkey = 487980E5882105887A13B6895F49FF08909485B2
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+[core]
+	editor = nvim
+	whitespace = trailing-space,space-before-tab
+
+[init]
+	defaultBranch = main
+
+[commit]
+	verbose = true
+	gpgsign = true
+
+[merge]
+	summary = true
+	stat = true
+
+[log]
+	decorate = short
+
+[diff "ruby"]
+	funcname = "^ *\\(\\(def\\) .*\\)"
+[diff "image"]
+	textconv = identify
