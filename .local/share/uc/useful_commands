@@ -1,14 +1,21 @@
+Add user to group:			gpasswd -a <user> <group>
+Remove user from group:			gpasswd -d <user> <group>
+
 Update Gentoo repo:			emaint sync -a
 Upgrade system:				emerge -uUD @world
 Remove package:				emerge -c <pkg>
 
+List active ebuild repos:		portageq repos_config /
+Add a new ebuild repo:			eselect repository enable <repo> [git|rsync] [uri]
+
 See USE flags applied to package:	equery uses <pkg>
+See active USE flags:			emerge --info | grep ^USE
 See package owning file:		equery belongs <path>
 
 See OpenRC services:			rc-status
-Start OpenRC service:			rc-service <serv> start
-Enable OpenRC service:			rc-update [--user] add <serv> <default|boot|...>
-Disable OpenRC service:			rc-update [--user] del <serv> <default|boot|...>
+Start OpenRC service:			rc-service [-U] <serv> start
+Enable OpenRC service:			rc-update [-U] add <serv> <default|boot|...>
+Disable OpenRC service:			rc-update [-U] del <serv> <default|boot|...>
 
 View firewall rules:			nft list ruleset
 
