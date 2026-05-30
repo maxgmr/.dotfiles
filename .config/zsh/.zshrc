@@ -112,13 +112,13 @@ zle -N zle-keymap-select
 
 # Always start with beam cursor for new prompts
 _beam_cursor() {
-	print -n "$block"
+	print -n "$beam"
 }
 precmd_functions+=(_beam_cursor)
 
 # Return to block cursor right before executing a command
 zle-line-finish() {
-	print -n "$beam"
+	print -n "$block"
 }
 zle -N zle-line-finish
 
