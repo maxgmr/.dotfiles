@@ -35,18 +35,18 @@ setopt prompt_subst
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git*' formats "%F{magenta}%f "
+zstyle ':vcs_info:git*' formats "%F{magenta}%b%f"
 
 _set_prompt() {
 	vcs_info
 
-	PROMPT="%B%F{blue}%n%f@%F{green}%m%f%b "
+	PROMPT="%B%F{blue}%n%f@%F{green}%m%f%b %F{yellow}%1~%f"
 
 	if [[ -n ${vcs_info_msg_0_} ]]; then
-		PROMPT+="%F{magenta}%f-${vcs_info_msg_0_}"
+		PROMPT+="|${vcs_info_msg_0_}"
 	fi
 
-	PROMPT+="%F{yellow}%1~%f %B>%b "
+	PROMPT+=" %B>%b "
 }
 precmd_functions+=(_set_prompt)
 
