@@ -38,15 +38,15 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git*' formats "%F{magenta}%b%f"
 
 _set_prompt() {
-	vcs_info
+    vcs_info
 
-	PROMPT="%B%F{blue}%n%f@%F{green}%m%f%b %F{yellow}%1~%f"
+    PROMPT="%B%F{blue}%n%f@%F{green}%m%f%b %F{yellow}%1~%f"
 
-	if [[ -n ${vcs_info_msg_0_} ]]; then
-		PROMPT+="|${vcs_info_msg_0_}"
-	fi
+    if [[ -n ${vcs_info_msg_0_} ]]; then
+    PROMPT+="|${vcs_info_msg_0_}"
+    fi
 
-	PROMPT+=" %B>%b "
+    PROMPT+=" %B>%b "
 }
 precmd_functions+=(_set_prompt)
 
@@ -60,9 +60,9 @@ autoload -U compinit
 # Cache compinit to speed up startup time (checks once a day)
 local zcompdump="$zsh_cache/.zcompdump"
 if [[ -n $(find "$zcompdump" -mtime -1 2>/dev/null) ]]; then
-	compinit -C -d "$zcompdump"
+    compinit -C -d "$zcompdump"
 else
-	compinit -d "$zcompdump"
+    compinit -d "$zcompdump"
 fi
 
 # Basic menu
@@ -80,7 +80,7 @@ _comp_options+=(globdots)
 
 # Stop git tag completion freeze (fallback hack)
 __git_files () {
-	_wanted files expl 'local files' _files
+    _wanted files expl 'local files' _files
 }
 
 
@@ -96,29 +96,29 @@ KEYTIMEOUT=5
 
 # Always start in insert mode
 zle-line-init() {
-	zle -K viins
+    zle -K viins
 }
 zle -N zle-line-init
 
 # Change cursor shape for different vi modes
 function zle-keymap-select {
-	if [[ ${KEYMAP} == vicmd ]] || [[ $1 = "block" ]]; then
-		print -n "$block"
-	else
-		print -n "$beam"
-	fi
+    if [[ ${KEYMAP} == vicmd ]] || [[ $1 = "block" ]]; then
+    print -n "$block"
+    else
+    print -n "$beam"
+    fi
 }
 zle -N zle-keymap-select
 
 # Always start with beam cursor for new prompts
 _beam_cursor() {
-	print -n "$beam"
+    print -n "$beam"
 }
 precmd_functions+=(_beam_cursor)
 
 # Return to block cursor right before executing a command
 zle-line-finish() {
-	print -n "$block"
+    print -n "$block"
 }
 zle -N zle-line-finish
 
