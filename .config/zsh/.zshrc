@@ -130,6 +130,17 @@ bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -v "^?" backward-delete-char
 
 
+# ====
+# MISC
+# ====
+
+# Add final term control sequences
+autoload -Uz add-zsh-hook
+ftcs_precmd() { print -Pn '\e]133;D\e\\' }
+add-zsh-hook precmd ftcs_precmd
+ftcs_preexec() { print -Pn '\e]133;C\e\\' }
+add-zsh-hook preexec ftcs_preexec
+
 # =======
 # ALIASES
 # =======
