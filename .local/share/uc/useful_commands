@@ -1,5 +1,9 @@
+Refresh shell:				exec $SHELL
+
 Add user to group:			gpasswd -a <user> <group>
 Remove user from group:			gpasswd -d <user> <group>
+
+List mounts:				findmnt
 
 Update Gentoo repo:			emaint sync -a
 Upgrade system:				emerge -uUD @world
@@ -7,6 +11,8 @@ Remove package:				emerge -c <pkg>
 
 List active ebuild repos:		portageq repos_config /
 Add a new ebuild repo:			eselect repository enable <repo> [git|rsync] [uri]
+
+List installed packages:		qlist -IRv
 
 See USE flags applied to package:	equery uses <pkg>
 See active USE flags:			emerge --info | grep ^USE
@@ -22,3 +28,5 @@ View firewall rules:			nft list ruleset
 Reload AutoFS config:			/etc/init.d/autofs reload
 
 Export public key:			gpg --armor --export <id>
+
+Refresh fonts:				fc-cache -fv
