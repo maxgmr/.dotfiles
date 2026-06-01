@@ -15,6 +15,9 @@
     editor = nvim
     whitespace = trailing-space,space-before-tab
 
+[diff]
+    algorithm = minimal
+
 [init]
     defaultBranch = main
 
