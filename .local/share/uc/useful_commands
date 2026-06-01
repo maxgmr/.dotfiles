@@ -5,9 +5,13 @@ Remove user from group:			gpasswd -d <user> <group>
 
 List mounts:				findmnt
 
+Recursively search for term in dir:	grep -r '<term>' .
+
 Update Gentoo repo:			emaint sync -a
 Upgrade system:				emerge -uUD @world
 Remove package:				emerge -c <pkg>
+Clean source files:			eclean [-d] distfiles
+Fix updated config files:		dispatch-conf
 
 List active ebuild repos:		portageq repos_config /
 Add a new ebuild repo:			eselect repository enable <repo> [git|rsync] [uri]
@@ -17,6 +21,8 @@ List installed packages:		qlist -IRv
 See USE flags applied to package:	equery uses <pkg>
 See active USE flags:			emerge --info | grep ^USE
 See package owning file:		equery belongs <path>
+
+Generate Gentoo package manifest:	ebuild <name>.ebuild manifest
 
 See OpenRC services:			rc-status
 Start OpenRC service:			rc-service [-U] <serv> start
@@ -29,4 +35,5 @@ Reload AutoFS config:			/etc/init.d/autofs reload
 
 Export public key:			gpg --armor --export <id>
 
+List fonts:				fc-list
 Refresh fonts:				fc-cache -fv
