@@ -1,0 +1,172 @@
+@define-color black #282828;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color magenta #b16286;
+@define-color cyan #689d6a;
+@define-color white #a89984;
+@define-color orange #d65d0e;
+
+@define-color bright-black #928374;
+@define-color bright-red #fb4934;
+@define-color bright-green #b8bb26;
+@define-color bright-yellow #fabd2f;
+@define-color bright-blue #83a598;
+@define-color bright-magenta #d3869b;
+@define-color bright-cyan #8ec07c;
+@define-color bright-white #ebdbb2;
+@define-color bright-orange #fe8019;
+
+@define-color fg @bright-white;
+
+@define-color bg alpha(@black, 0.9);
+@define-color module-bg alpha(@bright-black, 0.2);
+@define-color module-bg-light alpha(@white, 0.4);
+
+@define-color great @blue;
+@define-color good @green;
+@define-color okay @yellow;
+@define-color bad @orange;
+@define-color critical @red;
+
+@define-color workspaces-border @green;
+@define-color workspaces-active-border @bright-green;
+@define-color workspaces-urgent-border @red;
+
+@define-color tray-border @bright-cyan;
+@define-color tray-needs-attention-border @red;
+
+@define-color submap-border @bright-cyan;
+
+@define-color pulseaudio-border @bright-cyan;
+@define-color pulseaudio-muted-border @bright-black;
+
+@define-color backlight-border @bright-cyan;
+@define-color backlight-off-border @bright-black;
+
+@define-color network-disonnected-border @bright-black;
+@define-color network-disabled-border @red;
+
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Libre Baskerville", "GoMono Nerd Font Mono", serif;
+    font-size: 24px;
+}
+
+window#waybar {
+    background-color: @bg;
+    color: @fg;
+}
+
+#workspaces button,
+#tray,
+#submap,
+#pulseaudio,
+#backlight,
+#battery,
+#network,
+#cpu,
+#temperature,
+#memory
+{
+    padding: 0 10px;
+    margin: 0 2px;
+    border-bottom: 3px solid transparent;
+    background-color: @module-bg;
+    color: @fg;
+}
+
+#workspaces button {
+    border-bottom-color: @workspaces-border;
+}
+
+#workspaces button:hover {
+    background-color: @module-bg-light;
+}
+
+#workspaces button.focused,
+#workspaces button.active,
+#workspaces button.checked
+{
+    background-color: @module-bg-light;
+    border-bottom-color: @workspaces-active-border;
+}
+
+#workspaces button.urgent {
+    border-bottom-color: @workspaces-urgent-border;
+}
+
+#tray {
+    border-bottom-color: @tray-border;
+}
+
+#tray > .needs-attention {
+    border-bottom-color: @tray-needs-attention-border;
+}
+
+#submap {
+    font-style: italic;
+    border-bottom-color: @submap-border;
+}
+
+#pulseaudio {
+    border-bottom-color: @pulseaudio-border;
+}
+
+#pulseaudio.muted {
+    border-bottom-color: @pulseaudio-muted-border;
+}
+
+#backlight {
+    border-bottom-color: @backlight-border;
+}
+
+#backlight.off {
+    border-bottom-color: @backlight-off-border;
+}
+
+#battery.great,
+#network.great,
+#cpu.great,
+#memory.great
+{
+    border-bottom-color: @great;
+}
+
+#battery.good,
+#network.good,
+#cpu.good,
+#temperature,
+#memory.good
+{
+    border-bottom-color: @good;
+}
+
+#battery.okay,
+#network.okay,
+#cpu.okay,
+#memory.okay
+{
+    border-bottom-color: @okay;
+}
+
+#battery.bad,
+#network.bad,
+#cpu.bad,
+#temperature.warning,
+#memory.bad
+{
+    border-bottom-color: @bad;
+}
+
+#battery.critical,
+#network.critical,
+#cpu.critical,
+#temperature.critical,
+#memory.critical
+{
+    border-bottom-color: @critical;
+}
