@@ -1,4 +1,4 @@
 [Default]
-save_dir=$HOME/media/screenshots
+save_dir=$HOME/screenshots
 save_filename_format=%Y-%m-%d_%H-%M-%S.png
 text_font=serif
