@@ -91,6 +91,9 @@ __git_files () {
 # Activate vi mode
 bindkey -v
 
+# Disable colon keybind in command mode
+bindkey -M vicmd -r ":"
+
 # Drop into normal mode faster
 KEYTIMEOUT=5
 
