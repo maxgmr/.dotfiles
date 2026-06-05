@@ -1,5 +1,15 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    // Doesn't work on tty
+    // "logo": {
+    //     "type": "raw",
+    //     "source": "/home/maxgmr/pictures/marble_face/MarbleFace1.six",
+    //     "width": 27,
+    //     "height":15,
+    //     "padding": {
+    //         "top": 1
+    //     }
+    // },
     "modules": [
         "title",
         "separator",
