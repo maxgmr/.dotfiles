@@ -36,6 +36,3 @@
     funcname = "^ *\\(\\(def\\) .*\\)"
 [diff "image"]
     textconv = identify
-
-[safe]
-	directory = /etc/portage
