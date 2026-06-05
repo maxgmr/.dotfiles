@@ -4,14 +4,24 @@ Add user to group:			gpasswd -a <user> <group>
 Remove user from group:			gpasswd -d <user> <group>
 
 List mounts:				findmnt
+Get partition UUIDs:			blkid
+Check efibootmgr entries:		efibootmgr
 
 Recursively search for term in dir:	grep -r '<term>' .
+
+Extract .zst:				zstd -d <file>
+
+Get CPU info:				lscpu
+Get kernel version:			uname -r
+Get graphics card name:			lspci | grep -iE "vga|3d|display"
+List monitors in Hyprland:		hyprctl monitors
 
 Update Gentoo repo:			emaint sync -a
 Upgrade system:				emerge -uUD @world
 Remove package:				emerge -c <pkg>
 Clean source files:			eclean [-d] distfiles
 Fix updated config files:		dispatch-conf
+Update system with new config:		emerge --config <pkg>
 
 List active ebuild repos:		portageq repos_config /
 Add a new ebuild repo:			eselect repository enable <repo> [git|rsync] [uri]
@@ -23,6 +33,10 @@ See active USE flags:			emerge --info | grep ^USE
 See package owning file:		equery belongs <path>
 
 Generate Gentoo package manifest:	ebuild <name>.ebuild manifest
+
+List loaded kernel modules:		lsmod
+Regenerate Dracut for current kernel:	dracut -f --kver $(uname -r)
+Regenerate GRUB config:			grub-mkconfig -o /boot/grub/grub.cfg
 
 See OpenRC services:			rc-status
 Start OpenRC service:			rc-service [-U] <serv> start
