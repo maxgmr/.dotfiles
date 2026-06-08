@@ -170,3 +170,7 @@ window#waybar {
 {
     border-bottom-color: @critical;
 }
+
+tooltip label {
+    font-family: "GoMono Nerd Font Mono", monospace;
+}
