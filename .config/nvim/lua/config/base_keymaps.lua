@@ -9,6 +9,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader>ch", ":checkhealth<CR>", opts)
+vim.keymap.set("n", "<leader>ls", ":checkhealth vim.lsp<CR>", opts)
 
 -- Remain in indent mode
 vim.keymap.set("v", "<", "<gv", opts)

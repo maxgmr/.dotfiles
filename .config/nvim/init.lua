@@ -5,4 +5,4 @@ require("config.base_keymaps")
 
 require("config.lazy")
 
-require("config.plugin_keymaps")
+require("config.plugin_keymaps").set_global_keymaps()
