@@ -32,7 +32,12 @@ See USE flags applied to package:	equery uses <pkg>
 See active USE flags:			emerge --info | grep ^USE
 See package owning file:		equery belongs <path>
 
-Generate Gentoo package manifest:	ebuild <name>.ebuild manifest
+Generate Gentoo ebuild manifest:	ebuild <name> manifest
+Test Gentoo ebuild fetching:		GENTOO_MIRRORS="" ebuild <ebuild> manifest clean unpack
+Run Gentoo ebuild test suite:		ebuild <ebuild> clean test install
+Install Gentoo ebuild to test:		ebuild <ebuild> clean merge
+Remove test Gentoo ebuild:		ebuild <ebuild> unmerge clean
+Check Gentoo ebuild quality:		pkgcheck scan
 
 List loaded kernel modules:		lsmod
 Regenerate Dracut for current kernel:	dracut -f --kver $(uname -r)
@@ -51,3 +56,5 @@ Export public key:			gpg --armor --export <id>
 
 List fonts:				fc-list
 Refresh fonts:				fc-cache -fv
+
+Restart Waybar:				pkill -SIGUSR2 waybar
