@@ -4,7 +4,7 @@ return {
     opts = {
         mappings = {
             go_in_plus = '<Enter>',
-            close = '<Esc>',
+            close = '<leader>o',
         }
     },
 }
