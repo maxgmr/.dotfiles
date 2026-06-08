@@ -3,4 +3,6 @@ return {
     warning_symbol = "󰩏",
     hint_symbol = "󰌵",
     info_symbol = "",
+
+    undodir = "~/.vim/undodir",
 }
