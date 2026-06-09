@@ -6,4 +6,6 @@ return {
 
     undodir = "~/.vim/undodir",
     plugins_dir = "plugins",
+
+    default_keymap_opts = { noremap = true, silent = true },
 }
