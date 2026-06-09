@@ -5,4 +5,5 @@ return {
     info_symbol = "",
 
     undodir = "~/.vim/undodir",
+    plugins_dir = "plugins",
 }
