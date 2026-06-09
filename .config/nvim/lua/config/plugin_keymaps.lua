@@ -10,8 +10,14 @@ local M = {}
 
 -- Called in ../../init.lua; loaded when Neovim is launched
 function M.set_global_keymaps()
+    -- ==========
+    -- mini.files
+    -- ==========
     set_keymap("n", "<leader>o", ":lua MiniFiles.open()<CR>", { desc = "Open mini.files" })
 
+    -- =======
+    -- fzf-lua
+    -- =======
     local fzf_lua = safe_require("fzf-lua")
     set_keymap("n", "<leader>lf", function() fzf_lua.files() end, { desc = "FZF files" })
     set_keymap("n", "<leader>lg", function() fzf_lua.live_grep() end, { desc = "FZF live grep" })
@@ -20,6 +26,9 @@ function M.set_global_keymaps()
     set_keymap("n", "<leader>ld", function() fzf_lua.diagnostics_document() end, { desc = "FZF diagnostics document" })
     set_keymap("n", "<leader>lD", function() fzf_lua.diagnostics_workspace() end, { desc = "FZF diagnostics workspace" })
 
+    -- ========
+    -- gitsigns
+    -- ========
     local gitsigns = safe_require("gitsigns")
     set_keymap("n", "]h", function() gitsigns.next_hunk() end, { desc = "Next git hunk" })
     set_keymap("n", "[h", function() gitsigns.prev_hunk() end, { desc = "Previous git hunk" })
@@ -29,6 +38,11 @@ function M.set_global_keymaps()
     set_keymap("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end, { desc = "Git blame line" })
     set_keymap("n", "<leader>hB", function() gitsigns.toggle_current_line_blame() end, { desc = "Toggle inline blame" })
     set_keymap("n", "<leader>hd", function() gitsigns.diffthis() end, { desc = "Diff this" })
+
+    -- ===================
+    -- tree-sitter-manager
+    -- ===================
+    set_keymap("n", "<leader>ts", ":TSManager<CR>", { desc = "Open tree-sitter parser manager" })
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is
