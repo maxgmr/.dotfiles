@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     desc = "Things to do when a particular LSP attaches",
     callback = function(ev)
         -- Load keymaps
-        safe_require("config.plugin_keymaps").set_lsp_keymaps(ev.buf)
+        require("config.plugin_keymaps").set_lsp_keymaps(ev.buf)
     end,
 })
 

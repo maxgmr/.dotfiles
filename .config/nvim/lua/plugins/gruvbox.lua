@@ -1,8 +1,8 @@
+local safe_require = require("config.utils").safe_require
+
 vim.pack.add({
     "https://github.com/ellisonleao/gruvbox.nvim"
 })
 
-require("gruvbox").setup({
-    -- Default settings
-})
+safe_require("gruvbox").setup({})
 vim.cmd.colorscheme("gruvbox")

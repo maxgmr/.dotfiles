@@ -1,5 +1,6 @@
+local safe_require = require("config.utils").safe_require
+
 vim.pack.add({
     "https://github.com/ibhagwan/fzf-lua"
 })
-require("fzf-lua").setup({
-})
+safe_require("fzf-lua").setup({})

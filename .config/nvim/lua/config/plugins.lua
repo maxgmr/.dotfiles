@@ -1,5 +1,5 @@
-local utils = require("config.utils")
 local globals = require("config.globals")
+local safe_require = require("config.utils").safe_require
 
 -- List of plugins which should be loaded first
 local high_priority = {
@@ -22,7 +22,7 @@ local loaded_plugins = {}
 for _, filename in ipairs(high_priority) do
     local plugin_name = globals.plugins_dir .. "." .. filename
     -- Require plugin to load it
-    utils.safe_require(plugin_name)
+    safe_require(plugin_name)
     loaded_plugins[plugin_name] = true
 end
 
@@ -33,7 +33,7 @@ for _, file in ipairs(files) do
         local plugin_name = globals.plugins_dir .. "." .. file:sub(1, -5)
         -- Require plugin to load it if it hasn't been loaded already
         if not loaded_plugins[plugin_name] then
-            utils.safe_require(plugin_name)
+            safe_require(plugin_name)
         end
     end
 end
