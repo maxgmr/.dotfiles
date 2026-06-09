@@ -1,6 +1,7 @@
 -- Keymaps which must be loaded after any lazy plugins
 
 local set_keymap = require("config.utils").set_keymap
+local safe_require = require("config.utils").safe_require
 
 -- Set up shorthand
 local opts = { silent = true }
@@ -10,6 +11,14 @@ local M = {}
 -- Called in ../../init.lua; loaded when Neovim is launched
 function M.set_global_keymaps()
     set_keymap("n", "<leader>o", ":lua MiniFiles.open()<CR>", { desc = "Open mini.files" })
+
+    local fzf_lua = safe_require("fzf-lua")
+    set_keymap("n", "<leader>lf", function() fzf_lua.files() end, { desc = "FZF files" })
+    set_keymap("n", "<leader>lg", function() fzf_lua.live_grep() end, { desc = "FZF live grep" })
+    set_keymap("n", "<leader>lb", function() fzf_lua.buffers() end, { desc = "FZF buffers" })
+    set_keymap("n", "<leader>lh", function() fzf_lua.help_tags() end, { desc = "FZF help tags" })
+    set_keymap("n", "<leader>ld", function() fzf_lua.diagnostics_document() end, { desc = "FZF diagnostics document" })
+    set_keymap("n", "<leader>lD", function() fzf_lua.diagnostics_workspace() end, { desc = "FZF diagnostics workspace" })
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is
