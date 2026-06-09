@@ -3,7 +3,7 @@
 local set_keymap = require("config.utils").set_keymap
 
 -- Remap spacebar as leader key
-set_keymap("", "<Space>", "<Nop>", opts)
+set_keymap("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -28,6 +28,6 @@ set_keymap("n", "<leader>pa", function()
     print("file:", path)
 end, { desc = "Copy full file path" })
 
-set_keymap("n", "<leader>td", function()
+set_keymap("n", "<leader>dd", function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = "Toggle diagnostics" })

@@ -3,9 +3,6 @@
 local set_keymap = require("config.utils").set_keymap
 local safe_require = require("config.utils").safe_require
 
--- Set up shorthand
-local opts = { silent = true }
-
 local M = {}
 
 -- Called in ../../init.lua; loaded when Neovim is launched
@@ -23,25 +20,29 @@ function M.set_global_keymaps()
     -- fzf-lua
     -- =======
     local fzf_lua = safe_require("fzf-lua")
-    set_keymap("n", "<leader>lf", function() fzf_lua.files() end, { desc = "FZF files" })
-    set_keymap("n", "<leader>lg", function() fzf_lua.live_grep() end, { desc = "FZF live grep" })
-    set_keymap("n", "<leader>lb", function() fzf_lua.buffers() end, { desc = "FZF buffers" })
-    set_keymap("n", "<leader>lh", function() fzf_lua.help_tags() end, { desc = "FZF help tags" })
-    set_keymap("n", "<leader>ld", function() fzf_lua.diagnostics_document() end, { desc = "FZF diagnostics document" })
-    set_keymap("n", "<leader>lD", function() fzf_lua.diagnostics_workspace() end, { desc = "FZF diagnostics workspace" })
+    if fzf_lua then
+        set_keymap("n", "<leader>lf", function() fzf_lua.files() end, { desc = "FZF files" })
+        set_keymap("n", "<leader>lg", function() fzf_lua.live_grep() end, { desc = "FZF live grep" })
+        set_keymap("n", "<leader>lb", function() fzf_lua.buffers() end, { desc = "FZF buffers" })
+        set_keymap("n", "<leader>lh", function() fzf_lua.help_tags() end, { desc = "FZF help tags" })
+        set_keymap("n", "<leader>ld", function() fzf_lua.diagnostics_document() end, { desc = "FZF diagnostics document" })
+        set_keymap("n", "<leader>lD", function() fzf_lua.diagnostics_workspace() end, { desc = "FZF diagnostics workspace" })
+    end
 
     -- ========
     -- gitsigns
     -- ========
     local gitsigns = safe_require("gitsigns")
-    set_keymap("n", "]h", function() gitsigns.next_hunk() end, { desc = "Next git hunk" })
-    set_keymap("n", "[h", function() gitsigns.prev_hunk() end, { desc = "Previous git hunk" })
-    set_keymap("n", "<leader>hs", function() gitsigns.stage_hunk() end, { desc = "Stage git hunk" })
-    set_keymap("n", "<leader>hr", function() gitsigns.reset_hunk() end, { desc = "Reset git hunk" })
-    set_keymap("n", "<leader>hp", function() gitsigns.preview_hunk() end, { desc = "Preview git hunk" })
-    set_keymap("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end, { desc = "Git blame line" })
-    set_keymap("n", "<leader>hB", function() gitsigns.toggle_current_line_blame() end, { desc = "Toggle inline blame" })
-    set_keymap("n", "<leader>hd", function() gitsigns.diffthis() end, { desc = "Diff this" })
+    if gitsigns then
+        set_keymap("n", "]h", function() gitsigns.next_hunk() end, { desc = "Next git hunk" })
+        set_keymap("n", "[h", function() gitsigns.prev_hunk() end, { desc = "Previous git hunk" })
+        set_keymap("n", "<leader>hs", function() gitsigns.stage_hunk() end, { desc = "Stage git hunk" })
+        set_keymap("n", "<leader>hr", function() gitsigns.reset_hunk() end, { desc = "Reset git hunk" })
+        set_keymap("n", "<leader>hp", function() gitsigns.preview_hunk() end, { desc = "Preview git hunk" })
+        set_keymap("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end, { desc = "Git blame line" })
+        set_keymap("n", "<leader>hB", function() gitsigns.toggle_current_line_blame() end, { desc = "Toggle inline blame" })
+        set_keymap("n", "<leader>hd", function() gitsigns.diffthis() end, { desc = "Diff this" })
+    end
 
     -- ===================
     -- tree-sitter-manager
