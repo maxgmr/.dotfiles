@@ -48,6 +48,11 @@ function M.set_global_keymaps()
     -- tree-sitter-manager
     -- ===================
     set_keymap("n", "<leader>ts", ":TSManager<CR>", { desc = "Open tree-sitter parser manager" })
+
+    -- =====
+    -- mason
+    -- =====
+    set_keymap("n", "<leader>M", ":Mason<CR>", { desc = "Open Mason" })
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is
