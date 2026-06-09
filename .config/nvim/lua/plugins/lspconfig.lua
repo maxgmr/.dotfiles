@@ -37,22 +37,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- Path to LSPs dir
-local lsps_path = vim.fn.stdpath("config") .. "/lua/" .. globals.lsps_dir
-
 -- List of LSPs to enable
 local ensure_mason_installed = {}
+-- Path to lsps dir
+local lsps_path = vim.fn.stdpath("config") .. "/lua/" .. globals.lsps_dir
 
 -- Get all LSPs and configure them
 local files = vim.fn.readdir(lsps_path)
 for _, file in ipairs(files) do
     if file:match("%.lua$") then
-        local module = safe_require(globals.lsps_dir .. "." .. file:sub(1, -5))
+        local module_name = file:sub(1, -5)
+        local module = safe_require(globals.lsps_dir .. "." .. module_name)
         if module then
-            if type(module.configure) == "function" then
-                module.configure()
-            end
-            table.insert(ensure_mason_installed, module.name)
+            table.insert(ensure_mason_installed, module_name)
         end
     end
 end
