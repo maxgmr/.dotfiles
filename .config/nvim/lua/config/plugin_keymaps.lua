@@ -19,6 +19,16 @@ function M.set_global_keymaps()
     set_keymap("n", "<leader>lh", function() fzf_lua.help_tags() end, { desc = "FZF help tags" })
     set_keymap("n", "<leader>ld", function() fzf_lua.diagnostics_document() end, { desc = "FZF diagnostics document" })
     set_keymap("n", "<leader>lD", function() fzf_lua.diagnostics_workspace() end, { desc = "FZF diagnostics workspace" })
+
+    local gitsigns = safe_require("gitsigns")
+    set_keymap("n", "]h", function() gitsigns.next_hunk() end, { desc = "Next git hunk" })
+    set_keymap("n", "[h", function() gitsigns.prev_hunk() end, { desc = "Previous git hunk" })
+    set_keymap("n", "<leader>hs", function() gitsigns.stage_hunk() end, { desc = "Stage git hunk" })
+    set_keymap("n", "<leader>hr", function() gitsigns.reset_hunk() end, { desc = "Reset git hunk" })
+    set_keymap("n", "<leader>hp", function() gitsigns.preview_hunk() end, { desc = "Preview git hunk" })
+    set_keymap("n", "<leader>hb", function() gitsigns.blame_line({ full = true }) end, { desc = "Git blame line" })
+    set_keymap("n", "<leader>hB", function() gitsigns.toggle_current_line_blame() end, { desc = "Toggle inline blame" })
+    set_keymap("n", "<leader>hd", function() gitsigns.diffthis() end, { desc = "Diff this" })
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is
