@@ -10,6 +10,10 @@ local M = {}
 
 -- Called in ../../init.lua; loaded when Neovim is launched
 function M.set_global_keymaps()
+    -- ========
+    -- vim.pack
+    -- ========
+    set_keymap("n", "<leader>up", ":lua vim.pack.update()<CR>", { desc = "Update all plugins" })
     -- ==========
     -- mini.files
     -- ==========
