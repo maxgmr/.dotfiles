@@ -47,10 +47,11 @@ local ensure_mason_installed = {}
 local files = vim.fn.readdir(lsps_path)
 for _, file in ipairs(files) do
     if file:match("%.lua$") then
-        local module_name = globals.lsps_dir .. "." .. file:sub(1, -5)
-        local module = safe_require(module_name)
+        local module = safe_require(globals.lsps_dir .. "." .. file:sub(1, -5))
         if module then
-            module.configure()
+            if type(module.configure) == "function" then
+                module.configure()
+            end
             table.insert(ensure_mason_installed, module.name)
         end
     end
