@@ -3,7 +3,10 @@ local safe_require = require("config.utils").safe_require
 
 vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/mason-org/mason.nvim",
+    "https://github.com/mason-org/mason-lspconfig.nvim",
 })
+safe_require("mason").setup({})
 
 -- Diagnostic UI config
 vim.diagnostic.config({
@@ -37,11 +40,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- Path to LSPs dir
 local lsps_path = vim.fn.stdpath("config") .. "/lua/" .. globals.lsps_dir
 
--- Load and enable all LSPs in the LSP directory
+-- List of LSPs to enable
+local ensure_mason_installed = {}
+
+-- Get all LSPs and configure them
 local files = vim.fn.readdir(lsps_path)
 for _, file in ipairs(files) do
     if file:match("%.lua$") then
         local module_name = globals.lsps_dir .. "." .. file:sub(1, -5)
-        safe_require(module_name)
+        local module = safe_require(module_name)
+        if module then
+            module.configure()
+            table.insert(ensure_mason_installed, module.name)
+        end
     end
 end
+
+-- Ensure mason has installed all activated LSPs; mason-lspconfig
+-- activates them automatically
+safe_require("mason-lspconfig").setup({
+    ensure_installed = ensure_mason_installed,
+})
