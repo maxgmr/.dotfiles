@@ -17,6 +17,8 @@ return {
         "mason",
     },
 
+    -- This list should contain values from the nvim-lspconfig list:
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
     lsps = {
         "asm_lsp",
         "awk_ls",
@@ -44,6 +46,9 @@ return {
     linters = {
     },
 
+    -- This list should follow the formatters_by_ft layout detailed on
+    -- the conform.nvim GitHub:
+    -- https://github.com/stevearc/conform.nvim#options
     formatters = {
         asm = { "asmfmt" },
         bash = { "shfmt" },
@@ -71,8 +76,9 @@ return {
         yaml = { "yamlfmt" },
     },
 
-    -- Translation table if the mason name differs from the conform name
-    -- Map to false if there is no mason name
+    -- Translation table if the Mason name differs from the conform name
+    -- Map to false if there is no Mason name
+    -- Mason name list: https://mason-registry.dev/registry/list
     conform_to_mason = {
         clang_format = "clang-format",
         cmake_format = "cmakelang",

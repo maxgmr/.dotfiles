@@ -53,6 +53,18 @@ function M.set_global_keymaps()
     -- mason
     -- =====
     set_keymap("n", "<leader>M", ":Mason<CR>", { desc = "Open Mason" })
+
+    -- ============
+    -- conform.nvim
+    -- ============
+    local conform = safe_require("plugins.conform")
+    if conform then
+        set_keymap("n", "<leader>ci", ":ConformInfo<CR>", { desc = "Open conform.nvim info" })
+        set_keymap("n", "<leader>df", function() conform.set_format_on_save(false, false) end, { desc = "Disable format on save for buffer" })
+        set_keymap("n", "<leader>ef", function() conform.set_format_on_save(true, false) end, { desc = "Enable format on save for buffer" })
+        set_keymap("n", "<leader>dF", function() conform.set_format_on_save(false, true) end, { desc = "Disable format on save globally" })
+        set_keymap("n", "<leader>eF", function() conform.set_format_on_save(true, true) end, { desc = "Enable format on save globally" })
+    end
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is
