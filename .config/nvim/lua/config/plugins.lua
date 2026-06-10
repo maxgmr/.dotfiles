@@ -1,11 +1,6 @@
 local globals = require("config.globals")
 local safe_require = require("config.utils").safe_require
 
--- List of plugins which should be loaded first
-local high_priority = {
-    "gruvbox",
-}
-
 -- Path to plugins dir
 local config_path = vim.fn.stdpath("config") .. "/lua/" .. globals.plugins_dir
 
@@ -19,7 +14,7 @@ end
 local loaded_plugins = {}
 
 -- First pass: load high-priority plugins in order
-for _, filename in ipairs(high_priority) do
+for _, filename in ipairs(globals.high_priority_plugins) do
     local plugin_name = globals.plugins_dir .. "." .. filename
     -- Require plugin to load it
     safe_require(plugin_name)
