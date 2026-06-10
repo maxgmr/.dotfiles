@@ -43,8 +43,7 @@ return {
         "yamlls",
     },
 
-    linters = {
-    },
+    linters = {},
 
     -- This list should follow the formatters_by_ft layout detailed on
     -- the conform.nvim GitHub:
@@ -84,5 +83,5 @@ return {
         cmake_format = "cmakelang",
         ruff_format = "ruff",
         rustfmt = false,
-    }
+    },
 }

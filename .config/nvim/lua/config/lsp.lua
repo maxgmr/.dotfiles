@@ -13,12 +13,12 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.WARN] = globals.warning_symbol,
             [vim.diagnostic.severity.HINT] = globals.hint_symbol,
             [vim.diagnostic.severity.INFO] = globals.info_symbol,
-        }
+        },
     },
     float = {
         source = true,
         header = "",
-    }
+    },
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -40,4 +40,3 @@ for _, file in ipairs(files) do
         safe_require(globals.lsps_dir .. "." .. file:sub(1, -5))
     end
 end
-

@@ -14,7 +14,7 @@ local config = {
                     enable = true,
                 },
             },
-        }
-    }
+        },
+    },
 }
 vim.lsp.config("rust_analyzer", config)

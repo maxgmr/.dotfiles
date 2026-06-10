@@ -1,8 +1,6 @@
 -- Set up place to store undo history if it doesn't exist
 local undodir = vim.fn.expand(require("config.globals").undodir)
-if
-    vim.fn.isdirectory(undodir) == 0
-then
+if vim.fn.isdirectory(undodir) == 0 then
     vim.fn.mkdir(undodir, "p")
 end
 
@@ -67,7 +65,7 @@ local options = {
         "closeoff",
         "filler",
         "internal",
-        "linematch:60"
+        "linematch:60",
     },
 
     belloff = "all",

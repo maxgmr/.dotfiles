@@ -6,10 +6,7 @@ local M = {}
 function M.safe_require(module_name)
     local status_ok, result = pcall(require, module_name)
     if not status_ok then
-        vim.notify(
-            string.format("Error loading %s:\n%s", module_name, result),
-            vim.log.levels.ERROR
-        )
+        vim.notify(string.format("Error loading %s:\n%s", module_name, result), vim.log.levels.ERROR)
         return nil
     end
     return result
