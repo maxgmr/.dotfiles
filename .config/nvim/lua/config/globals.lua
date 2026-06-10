@@ -9,4 +9,28 @@ return {
     lsps_dir = "lsps",
 
     default_keymap_opts = { noremap = true, silent = true },
+
+    lsps = {
+        "asm_lsp",
+        "awk_ls",
+        "bashls",
+        "clangd",
+        "cmake",
+        "csharp_ls",
+        "cssls",
+        "dockerls",
+        "gopls",
+        "html",
+        "jsonls",
+        "lemminx",
+        "lua_ls",
+        "markdown_oxide",
+        "pyright",
+        "rust_analyzer",
+        "somesass_ls",
+        "sqlls",
+        "taplo",
+        "ts_ls",
+        "yamlls",
+    },
 }
