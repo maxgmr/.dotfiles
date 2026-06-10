@@ -15,6 +15,17 @@ safe_require("conform").setup({
     end,
 })
 
+-- Path to formatters dir
+local formatters_path = vim.fn.stdpath("config") .. "/lua/" .. globals.formatters_dir
+
+-- Configure all formatters
+local files = vim.fn.readdir(formatters_path)
+for _, file in ipairs(files) do
+    if file:match("%.lua$") then
+        safe_require(globals.formatters_dir .. "." .. file:sub(1, -5))
+    end
+end
+
 -- Export function to set formatting on save
 local M = {}
 function M.set_format_on_save(state, is_global)

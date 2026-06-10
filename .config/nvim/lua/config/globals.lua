@@ -7,6 +7,7 @@ return {
     undodir = "~/.vim/undodir",
     plugins_dir = "plugins",
     lsps_dir = "lsps",
+    formatters_dir = "formatters",
 
     default_keymap_opts = { noremap = true, silent = true },
 
@@ -19,6 +20,16 @@ return {
 
     -- This list should contain values from the nvim-lspconfig list:
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+    --
+    -- Individual LSPs can be configured by creating a file at
+    -- `lua/lsps/<LSP>.lua` with the following format:
+    -- ```
+    -- ---@type vim.lsp.Config
+    -- local config = {
+    --     [...]
+    -- }
+    -- vim.lsp.config("<LSP>", config)
+    -- ```
     lsps = {
         "asm_lsp",
         "awk_ls",
@@ -48,6 +59,14 @@ return {
     -- This list should follow the formatters_by_ft layout detailed on
     -- the conform.nvim GitHub:
     -- https://github.com/stevearc/conform.nvim#options
+    --
+    -- Individual formatters can be configured by creating a file at
+    -- `lua/formatters/<FORMATTER>.lua` with the following format:
+    -- ```
+    -- require("conform").formatters.<FORMATTER> = {
+    --     [...]
+    -- }
+    -- ```
     formatters = {
         asm = { "asmfmt" },
         bash = { "shfmt" },
