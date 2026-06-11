@@ -41,6 +41,7 @@ return {
         "dockerls",
         "gopls",
         "html",
+        "jdtls",
         "jsonls",
         "lemminx",
         "lua_ls",
@@ -54,7 +55,26 @@ return {
         "yamlls",
     },
 
-    linters = {},
+    -- This list should follow the linters_by_ft format and be from the
+    -- nvim-lint list:
+    -- https://github.com/mfussenegger/nvim-lint#available-linters
+    linters = {
+        bash = { "shellcheck" },
+        css = { "stylelint" },
+        dockerfile = { "hadolint" },
+        go = { "golangci-lint" },
+        javascript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        lua = { "luacheck" },
+        markdown = { "markdownlint", "vale" },
+        python = { "ruff" },
+        scss = { "stylelint" },
+        sh = { "shellcheck" },
+        sql = { "sqlfluff" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
+        yaml = { "yamllint" },
+    },
 
     -- This list should follow the formatters_by_ft layout detailed on
     -- the conform.nvim GitHub:
@@ -91,6 +111,7 @@ return {
         toml = { "taplo" },
         typescript = { "prettierd" },
         typescriptreact = { "prettierd" },
+        xml = { "xmlformatter" },
         yaml = { "yamlfmt" },
     },
 
