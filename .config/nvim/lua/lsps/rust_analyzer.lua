@@ -3,13 +3,13 @@ local config = {
     ---@type lspconfig.settings.rust_analyzer
     settings = {
         ["rust-analyzer"] = {
+            cargo = {
+                features = "all",
+            },
+            check = {
+                command = "clippy",
+            },
             diagnostics = {
-                cargo = {
-                    features = "all",
-                },
-                check = {
-                    command = "clippy",
-                },
                 styleLints = {
                     enable = true,
                 },
