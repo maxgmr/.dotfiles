@@ -30,8 +30,10 @@ end
 local M = {}
 function M.set_format_on_save(state, is_global)
     if is_global then
+        -- luacheck: ignore 122
         vim.g.disable_autoformat = not state
     else
+        -- luacheck: ignore 122
         vim.b.disable_autoformat = not state
     end
 
