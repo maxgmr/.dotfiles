@@ -52,9 +52,13 @@ View firewall rules:			nft list ruleset
 
 Reload AutoFS config:			/etc/init.d/autofs reload
 
+Audio settings:				pavucontrol
+
 Export public key:			gpg --armor --export <id>
 
 List fonts:				fc-list
 Refresh fonts:				fc-cache -fv
+
+Benchmark Neovim:			nvim --startuptime <out> +q [file]
 
 Restart Waybar:				pkill -SIGUSR2 waybar
