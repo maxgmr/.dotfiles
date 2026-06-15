@@ -58,7 +58,7 @@
     "pulseaudio": {
         "scroll-step": 1,
         "format": "{icon} {volume}%",
-        "format-muted": "󰝟",
+        "format-muted": "󰝟 {volume}%",
         "format-source": " {volume}%",
         "format-bluetooth": "{icon} {volume}%",
         "format-bluetooth-muted": "󰝟",
@@ -85,7 +85,7 @@
         // except battery and pulseaudio)
         "states": {
             "on": 1,
-            "off": 0 
+            "off": 0
         },
         "format-icons": [
             "",
