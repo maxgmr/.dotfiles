@@ -1,21 +1,20 @@
 return {
-    error_symbol = "󰚌",
-    warning_symbol = "󰩏",
-    hint_symbol = "󰌵",
-    info_symbol = "",
-
-    undodir = "~/.vim/undodir",
-    plugins_dir = "plugins",
-    lsps_dir = "lsps",
-    formatters_dir = "formatters",
-
-    default_keymap_opts = { noremap = true, silent = true },
-
-    -- Plugins which should be loaded before all others, and the order
-    -- in which they should be loaded
-    high_priority_plugins = {
+    -- List of plugins in the order they should be loaded in
+    --
+    -- Each entry must correspond to a file name within `lua/plugins/`
+    plugins = {
+        -- Should be loaded first
         "gruvbox",
         "mason",
+        -- Load order irrelevant
+        "blink_cmp",
+        "conform",
+        "fzf_lua",
+        "gitsigns",
+        "lint",
+        "lspconfig",
+        "mini_files",
+        "tree_sitter_manager",
     },
 
     -- This list should contain values from the nvim-lspconfig list:
@@ -124,4 +123,16 @@ return {
         ruff_format = "ruff",
         rustfmt = false,
     },
+
+    error_symbol = "󰚌",
+    warning_symbol = "󰩏",
+    hint_symbol = "󰌵",
+    info_symbol = "",
+
+    undodir = "~/.vim/undodir",
+    plugins_dir = "plugins",
+    lsps_dir = "lsps",
+    formatters_dir = "formatters",
+
+    default_keymap_opts = { noremap = true, silent = true },
 }
