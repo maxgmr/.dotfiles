@@ -12,22 +12,13 @@ return {
         "fzf_lua",
         "gitsigns",
         "lint",
+        "lspconfig",
         "mini_files",
         "tree_sitter_manager",
     },
 
     -- This list should contain values from the nvim-lspconfig list:
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-    --
-    -- Individual LSPs can be configured by creating a file at
-    -- `lua/lsps/<LSP>.lua` with the following format:
-    -- ```
-    -- ---@type vim.lsp.Config
-    -- local config = {
-    --     [...]
-    -- }
-    -- vim.lsp.config("<LSP>", config)
-    -- ```
     lsps = {
         "asm-lsp",
         "awk-language-server",
@@ -51,6 +42,22 @@ return {
         "taplo",
         "typescript-language-server",
         "yaml-language-server",
+    },
+
+    -- Individual LSPs can be configured by creating a file at
+    -- `lua/lsps/<LSP>.lua` with the following format:
+    -- ```
+    -- ---@type vim.lsp.Config
+    -- local config = {
+    --     [...]
+    -- }
+    -- vim.lsp.config("<LSP>", config)
+    -- ```
+    --
+    -- <LSP> should match one of the names in the nvim-lspconfig list:
+    -- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+    lsp_configs = {
+        "rust_analyzer",
     },
 
     -- This list should follow the linters_by_ft format and be from the
@@ -129,8 +136,6 @@ return {
     info_symbol = "",
 
     undodir = "~/.vim/undodir",
-    plugins_dir = "plugins",
-    lsps_dir = "lsps",
     formatters_dir = "formatters",
 
     default_keymap_opts = { noremap = true, silent = true },

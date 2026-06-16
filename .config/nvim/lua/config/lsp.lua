@@ -1,5 +1,4 @@
 local globals = require("config.globals")
-local safe_require = require("config.utils").safe_require
 
 -- Diagnostic UI config
 vim.diagnostic.config({
@@ -29,14 +28,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
         require("config.plugin_keymaps").set_lsp_keymaps(ev.buf)
     end,
 })
-
--- Path to LSPs dir
-local lsps_path = vim.fn.stdpath("config") .. "/lua/" .. globals.lsps_dir
-
--- Get all LSPs and configure them
-local files = vim.fn.readdir(lsps_path)
-for _, file in ipairs(files) do
-    if file:match("%.lua$") then
-        safe_require(globals.lsps_dir .. "." .. file:sub(1, -5))
-    end
-end
