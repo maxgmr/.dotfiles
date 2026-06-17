@@ -31,3 +31,7 @@ end, { desc = "Copy full file path" })
 set_keymap("n", "<leader>dd", function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = "Toggle diagnostics" })
+
+set_keymap({ "n", "t" }, "<C-\\>", function()
+    require("config.terminal").toggle()
+end, { desc = "Toggle floating terminal" })
