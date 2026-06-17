@@ -5,6 +5,7 @@ return {
     plugins = {
         -- Should be loaded first
         "gruvbox",
+        "web_devicons",
         "mason",
         -- Load order irrelevant
         "blink_cmp",
