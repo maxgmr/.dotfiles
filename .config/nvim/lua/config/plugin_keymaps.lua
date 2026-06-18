@@ -79,6 +79,13 @@ function M.set_global_keymaps()
             conform.set_format_on_save(true, true)
         end, { desc = "Enable format on save globally" })
     end
+
+    -- ===============
+    -- bufferline.nvim
+    -- ===============
+    set_keymap("n", "<leader>w", ":bdelete<CR>", { desc = "Close current buffer" })
+    set_keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Cycle to next buffer" })
+    set_keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { desc = "Cycle to previous buffer" })
 end
 
 -- Called in ../plugins/lspconfig.lua; lazily loaded when an LSP is

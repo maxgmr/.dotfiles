@@ -9,6 +9,7 @@ return {
         "mason",
         -- Load order irrelevant
         "blink_cmp",
+        "bufferline",
         "conform",
         "crates",
         "fzf_lua",
@@ -140,6 +141,8 @@ return {
 
     autoformat_on_symbol = "󰈈",
     autoformat_off_symbol = "",
+
+    modified_symbol = "",
 
     term_width_percent = 0.8,
     term_height_percent = 0.8,
