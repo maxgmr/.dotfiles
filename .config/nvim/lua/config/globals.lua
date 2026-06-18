@@ -10,6 +10,7 @@ return {
         -- Load order irrelevant
         "blink_cmp",
         "conform",
+        "crates",
         "fzf_lua",
         "gitsigns",
         "lint",
