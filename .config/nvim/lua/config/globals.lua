@@ -13,6 +13,7 @@ return {
         "conform",
         "crates",
         "fzf_lua",
+        "gentoo_syntax",
         "gitsigns",
         "lint",
         "lspconfig",
