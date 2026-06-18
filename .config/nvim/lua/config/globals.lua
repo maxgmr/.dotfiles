@@ -143,6 +143,9 @@ return {
     term_width_percent = 0.8,
     term_height_percent = 0.8,
 
+    unicode_width_percent = 0.8,
+    unicode_height_percent = 0.8,
+
     undodir = "~/.vim/undodir",
     formatters_dir = "formatters",
 

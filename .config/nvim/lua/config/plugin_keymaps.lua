@@ -27,6 +27,10 @@ function M.set_global_keymaps()
         set_keymap("n", "<leader>lh", fzf_lua.help_tags, { desc = "FZF help tags" })
         set_keymap("n", "<leader>ld", fzf_lua.diagnostics_document, { desc = "FZF diagnostics document" })
         set_keymap("n", "<leader>lD", fzf_lua.diagnostics_workspace, { desc = "FZF diagnostics workspace" })
+        local unicode_picker = require("plugins.fzf_lua").unicode_picker
+        if unicode_picker then
+            set_keymap("i", "<C-l>", unicode_picker, { desc = "Unicode picker" })
+        end
     end
 
     -- ========
