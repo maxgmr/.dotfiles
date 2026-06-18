@@ -1,7 +1,7 @@
 local globals = require("config.globals")
 local safe_require = require("config.utils").safe_require
 
-vim.schedule(function()
+local function load_plugin()
     vim.pack.add({
         "https://github.com/akinsho/bufferline.nvim",
     })
@@ -41,4 +41,18 @@ vim.schedule(function()
             always_show_bufferline = false,
         },
     })
-end)
+end
+
+vim.api.nvim_create_autocmd({ "BufAdd", "BufEnter" }, {
+    desc = "Lazy load bufferline.nvim when a second buffer is opened",
+    group = vim.api.nvim_create_augroup("BufferlineLazyLoad", { clear = true }),
+    callback = function()
+        -- If more than one standard buffer, load the plugin
+        if #vim.fn.getbufinfo({ buflisted = 1 }) > 1 then
+            load_plugin()
+            vim.cmd.redrawtabline()
+            -- Returning true automatically deletes the autocmd
+            return true
+        end
+    end,
+})
