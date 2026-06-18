@@ -2,10 +2,16 @@
 -- luacheck: ignore 122
 vim.g.python3_host_prog = "/usr/bin/python3"
 
--- Ensure basic options and keymaps are set up before plugins
+-- Ensure basic options are set up before anything
 require("config.options")
+
+-- Homemade additions should be set up before keymaps so their bindings
+-- can be added to base_keymaps
 require("config.terminal")
+require("config.statusline")
+
 require("config.base_keymaps")
+
 -- Ensure native Neovim LSP settings are set and LSPs are configured
 -- before loading any plugins
 require("config.lsp")

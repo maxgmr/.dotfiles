@@ -136,6 +136,9 @@ return {
     hint_symbol = "󰌵",
     info_symbol = "",
 
+    autoformat_on_symbol = "󰈈",
+    autoformat_off_symbol = "",
+
     term_width_percent = 0.8,
     term_height_percent = 0.8,
 
