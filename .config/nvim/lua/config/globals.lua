@@ -15,6 +15,7 @@ return {
         "lint",
         "lspconfig",
         "mini_files",
+        "mini_pairs",
         "tree_sitter_manager",
     },
 

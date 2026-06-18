@@ -20,7 +20,10 @@ if cmp then
             ["<C-Left>"] = { "snippet_backward", "fallback" },
         },
         appearance = { nerd_font_variant = "mono" },
-        completion = { menu = { auto_show = true } },
+        completion = {
+            accept = { auto_brackets = { enabled = true } },
+            menu = { auto_show = true },
+        },
         sources = { default = { "lsp", "path", "buffer", "snippets" } },
         snippets = {
             expand = function(snippet)
