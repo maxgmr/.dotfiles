@@ -132,6 +132,19 @@ bindkey -M menuselect "l" vi-forward-char
 bindkey -M menuselect "j" vi-down-line-or-history
 bindkey -v "^?" backward-delete-char
 
+# Set highlighting in vi mode
+zle_highlight=(
+    region:bg=8
+    cursor:reverse
+)
+
+
+# ===================
+# SYNTAX HIGHLIGHTING
+# ===================
+
+eval "$(zsh-patina activate)"
+
 
 # ====
 # MISC
