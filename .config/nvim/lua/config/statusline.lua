@@ -98,7 +98,7 @@ end
 -- Cache for expensive lookups (file size, path, and icons)
 local cache = {}
 -- Update cache on specific events to avoid I/O during redraws
-vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "TextChanged" }, {
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "BufFilePost" }, {
     desc = "Update statusline cache",
     group = vim.api.nvim_create_augroup("StatusLineCache", { clear = true }),
     callback = function(args)
