@@ -4,16 +4,22 @@ local config = {
     settings = {
         ["rust-analyzer"] = {
             cargo = {
+                buildScripts = { enable = true },
                 features = "all",
             },
             check = {
                 command = "clippy",
+                allTargets = true,
             },
+            checkOnSave = true,
             diagnostics = {
+                disabled = {},
+                enable = true,
                 styleLints = {
                     enable = true,
                 },
             },
+            procMacro = { enable = true },
         },
     },
 }
