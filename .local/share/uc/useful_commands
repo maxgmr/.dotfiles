@@ -62,3 +62,8 @@ Refresh fonts:				fc-cache -fv
 Benchmark Neovim:			nvim --startuptime <out> +q [file]
 
 Restart Waybar:				pkill -SIGUSR2 waybar
+
+List running Docker containers:		docker ps
+List all Docker containers:		docker ps -a
+Stop Docker container:			docker stop <container>
+Delete Docker container:		docker rm <container>
