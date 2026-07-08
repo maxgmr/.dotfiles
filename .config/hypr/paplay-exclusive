@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+VOLUME="65536"
+COOLDOWN=100 # Cooldown in milliseconds
+SOUND_FILE=
+TIMESTAMP_FILE="/tmp/paplay-exclusive-last-played"
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+    -v | --volume)
+        VOLUME="$2"
+        shift 2
+        ;;
+    -c | --cooldown)
+        COOLDOWN="$2"
+        shift 2
+        ;;
+    *)
+        # Assume any unmatched arg is sound file
+        SOUND_FILE="$1"
+        shift
+        ;;
+    esac
+done
+
+# Ensure path to file is valid
+if [ -z "$SOUND_FILE" ] || [ ! -f "$SOUND_FILE" ]; then
+    echo "Usage: $0 [--volume|-v <0-65536>] [--cooldown|-c <ms>] /path/to/sound" >&2
+    exit 1
+fi
+
+# Ensure volume value is valid
+if ! [[ "$VOLUME" =~ ^[0-9]+$ ]] || [ "$VOLUME" -lt 0 ] || [ "$VOLUME" -gt 65536 ]; then
+    echo "volume must be integer in range 0-65536" >&2
+    exit 1
+fi
+
+# Cooldown check
+CURRENT_TIME=$(date +%s%3N)
+
+if [ -f "$TIMESTAMP_FILE" ]; then
+    LAST_TIME=$(cat "$TIMESTAMP_FILE")
+    if [[ "$LAST_TIME" =~ ^[0-9]+$ ]]; then
+        DIFF=$((CURRENT_TIME - LAST_TIME))
+        if [ "$DIFF" -lt "$COOLDOWN" ]; then
+            exit 0
+        fi
+    fi
+fi
+
+# Ignore streams belonging to 'paplay' so volume sounds can overlap, but halt if
+# anything else is playing.
+ACTIVE_STREAMS=$(wpctl status | awk '
+    /Audio/ { in_audio=1; next }
+    /Video/ { in_audio=0; next }
+    in_audio {
+        # Enter the Streams section of the Audio block
+        if (/└─ Streams:/) { in_streams=1; next }
+        
+        if (in_streams) {
+            # Sub-streams always contain routing arrows (< or >)
+            if ($0 ~ /[<>]/) {
+                if (!ignore && /\[active\]/) {
+                    print "active"
+                    exit
+                }
+            } 
+            # If it has no arrows but starts with an ID, it is a top-level app
+            else if ($0 ~ /^[ \t]*[0-9]+\./) {
+                ignore = ($0 ~ /paplay/) ? 1 : 0
+            }
+        }
+    }
+')
+if [ -z "$ACTIVE_STREAMS" ]; then
+    echo "$CURRENT_TIME" >"$TIMESTAMP_FILE"
+    paplay --volume="$VOLUME" "$SOUND_FILE" &
+fi

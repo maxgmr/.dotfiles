@@ -77,28 +77,28 @@ end
 hl.bind(
 	"XF86AudioRaiseVolume",
 	hl.dsp.exec_cmd(
-		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && ~/.config/hypr/paplay-exclusive /home/maxgmr/sounds/crus_mmm.wav"
 	),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"XF86AudioLowerVolume",
 	hl.dsp.exec_cmd(
-		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.config/hypr/paplay-exclusive /home/maxgmr/sounds/crus_mmm.wav"
 	),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"SHIFT + XF86AudioRaiseVolume",
 	hl.dsp.exec_cmd(
-		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+ && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+ && ~/.config/hypr/paplay-exclusive /home/maxgmr/sounds/crus_mmm.wav"
 	),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"SHIFT + XF86AudioLowerVolume",
 	hl.dsp.exec_cmd(
-		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && ~/.config/hypr/paplay-exclusive /home/maxgmr/sounds/crus_mmm.wav"
 	),
 	{ locked = true, repeating = true }
 )
