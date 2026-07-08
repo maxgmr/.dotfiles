@@ -26,7 +26,10 @@ hl.bind(mainMod .. " + " .. codeQ, hl.dsp.window.close())
 -- Kill window
 hl.bind(mainMod .. " + SHIFT + " .. codeQ, hl.dsp.window.kill())
 -- Shut down hyprland
-hl.bind(mainMod .. " + SHIFT + " .. codeE, hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(
+	mainMod .. " + SHIFT + " .. codeE,
+	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
+)
 
 -- Toggle window states
 hl.bind(mainMod .. " + " .. codeF, hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
@@ -56,40 +59,48 @@ hl.bind(mainMod .. " + SHIFT + " .. codeJ, hl.dsp.window.move({ direction = "dow
 -- Resize windows
 hl.bind(mainMod .. " + " .. codeR, hl.dsp.submap("resize"))
 hl.define_submap("resize", function()
-    hl.bind(codeH, hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-    hl.bind(codeL, hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
-    hl.bind(codeK, hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-    hl.bind(codeJ, hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-    hl.bind(codeEsc, hl.dsp.submap("reset"))
+	hl.bind(codeH, hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+	hl.bind(codeL, hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+	hl.bind(codeK, hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+	hl.bind(codeJ, hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+	hl.bind(codeEsc, hl.dsp.submap("reset"))
 end)
 
 -- Switch workspaces & move windows to workspace
 for ws = 1, 10 do
-    local key = ws % 10 -- Map workspace 10 to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = ws }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+	local key = ws % 10 -- Map workspace 10 to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = ws }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
 end
 
 -- Audio multimedia keys
 hl.bind(
-    "XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
-    { locked = true, repeating = true }
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd(
+		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+ && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+	),
+	{ locked = true, repeating = true }
 )
 hl.bind(
-    "XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
-    { locked = true, repeating = true }
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd(
+		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+	),
+	{ locked = true, repeating = true }
 )
 hl.bind(
-    "SHIFT + XF86AudioRaiseVolume",
-    hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"),
-    { locked = true, repeating = true }
+	"SHIFT + XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd(
+		"wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+ && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+	),
+	{ locked = true, repeating = true }
 )
 hl.bind(
-    "SHIFT + XF86AudioLowerVolume",
-    hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),
-    { locked = true, repeating = true }
+	"SHIFT + XF86AudioLowerVolume",
+	hl.dsp.exec_cmd(
+		"wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && paplay /home/maxgmr/sounds/crus_mmm.wav --volume 40000"
+	),
+	{ locked = true, repeating = true }
 )
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
@@ -104,8 +115,8 @@ hl.bind("SHIFT + XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 1%-"),
 hl.bind(mainMod .. " + SHIFT + " .. codeS, hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 -- Take screenshot and save to file
 hl.bind(
-    mainMod .. " + SHIFT + " .. codeD,
-    hl.dsp.exec_cmd('grim -g "$(slurp)" ' .. options.screenshot_dir .. "/$(date +%Y-%m-%d_%H-%M-%S).png")
+	mainMod .. " + SHIFT + " .. codeD,
+	hl.dsp.exec_cmd('grim -g "$(slurp)" ' .. options.screenshot_dir .. "/$(date +%Y-%m-%d_%H-%M-%S).png")
 )
 
 -- Open notifications
