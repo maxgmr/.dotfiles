@@ -19,18 +19,26 @@ List monitors in Hyprland:		hyprctl monitors
 Update Gentoo repo:			emaint sync -a
 Upgrade system:				emerge -uUD @world
 Remove package:				emerge -c <pkg>
+Remove package from world:		emerge --deselect <pkg>
 Clean source files:			eclean [-d] distfiles
 Fix updated config files:		dispatch-conf
 Update system with new config:		emerge --config <pkg>
 
 List active ebuild repos:		portageq repos_config /
 Add a new ebuild repo:			eselect repository enable <repo> [git|rsync] [uri]
+List all available overlays:		eselect repository list
+List enabled overlays:			eselect repository list -i
 
 List installed packages:		qlist -IRv
+See installed package version:		equery list <pkg>
+List installed packages in overlay:	eix --installed --in-overlay <overlay>
+Check available package keywords:	eshowkw <pkg>
+Check reverse dependencies:		equery depends '<pkg>'
 
 See USE flags applied to package:	equery uses <pkg>
 See active USE flags:			emerge --info | grep ^USE
 See package owning file:		equery belongs <path>
+See unstable/testing overrides:		grep -rnw '/etc/portage/package.accept_keywords/' -e '~amd64'
 
 Generate Gentoo ebuild manifest:	ebuild <name> manifest
 Test Gentoo ebuild fetching:		GENTOO_MIRRORS="" ebuild <ebuild> manifest clean unpack
@@ -54,6 +62,8 @@ Reload AutoFS config:			/etc/init.d/autofs reload
 
 Audio settings:				pavucontrol
 
+GPG encrypt file:			gpg -c <file>
+GPG decrypt file:			gpg -d <file>
 Export public key:			gpg --armor --export <id>
 
 List fonts:				fc-list
@@ -67,3 +77,5 @@ List running Docker containers:		docker ps
 List all Docker containers:		docker ps -a
 Stop Docker container:			docker stop <container>
 Delete Docker container:		docker rm <container>
+
+World list:				/var/lib/portage/world
