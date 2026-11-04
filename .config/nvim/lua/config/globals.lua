@@ -41,7 +41,6 @@ return {
         "lua-language-server",
         "markdown-oxide",
         "pyright",
-        "rust-analyzer",
         "some-sass-language-server",
         "sqlls",
         "taplo",
