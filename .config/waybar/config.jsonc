@@ -45,8 +45,7 @@
     },
     "clock": {
         "interval": 1,
-        // Temporary workaround
-        "timezone": "US/Pacific",
+        "timezone": "America/Vancouver",
         "format": "{:%R %a %F}",
         "tooltip-format": "<span font_family=\"GoMono Nerd Font Mono\"><big>{:%T}</big>\n<small>{calendar}</small></span>",
         "calendar": {
