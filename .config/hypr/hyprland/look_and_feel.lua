@@ -42,6 +42,8 @@ hl.config({
 		preserve_split = true,
 	},
 	misc = {
+		bell_sound = "/home/maxgmr/sounds/crus_kick.wav",
+
 		force_default_wallpaper = 0,
 		disable_hyprland_logo = true,
 		disable_splash_rendering = true,
