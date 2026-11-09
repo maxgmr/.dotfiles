@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>md", function()
     -- Build the shell command
     local current_file_esc = vim.fn.shellescape(current_file)
     local output_html_esc = vim.fn.shellescape(output_html)
-    local cmd = string.format("pandoc %s -o %s && firefox %s", current_file_esc, output_html_esc, output_html_esc)
+    local cmd = string.format("pandoc %s -o %s && firefox-bin %s", current_file_esc, output_html_esc, output_html_esc)
 
     vim.fn.jobstart(cmd, {
         on_exit = function(_, exit_code)

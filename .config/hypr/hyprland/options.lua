@@ -3,7 +3,7 @@ local options = {}
 options.terminal = "foot"
 options.fileManager = "pcmanfm"
 options.menu = "fuzzel"
-options.browser = "firefox"
+options.browser = "firefox-bin"
 
 options.screenshot_dir = "~/screenshots/"
 
